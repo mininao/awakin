@@ -1,5 +1,6 @@
 {
     user_id: 1,
+    amdin: false,
     email: "user@mail.com",
     name: "name",
     first_name: "First-Name",
