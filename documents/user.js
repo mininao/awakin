@@ -1,4 +1,3 @@
-Users
 {
     user_id: 1,
     email: "user@mail.com",
