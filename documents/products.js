@@ -1,4 +1,3 @@
-Products
 {
     product_id: 1,
     type: "menu",
