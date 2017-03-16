@@ -10,7 +10,7 @@ Pour l'utiliser :
 1. Installer Virtualbox (Inutile de créer une VM, juste l'installer)
 2. Installer Vagrant (Gestionnaire automatique 🤖 de VMs) https://www.vagrantup.com/downloads.html
 3. Ajoutez la ligne `192.168.10.10  homestead.app` à votre fichier *hosts* (Tuto : https://support.rackspace.com/how-to/modify-your-hosts-file/ )  
-  (Pour pouvoir accéder  notre serveur de dev en tapant http://homestead.app ;) )
+  Cela permettra d'accéder à notre sereur de dev en tapant http://homestead.app ;)
 
 ## Utilisation
 
