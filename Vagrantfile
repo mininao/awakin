@@ -32,6 +32,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     Homestead.configure(config, settings)
 
+    # Use custom URL for faster downloads
+    config.vm.box_url = "https://owus.money/statico/homestead.box"
+    config.vm.box_version = nil
+
     if File.exist? afterScriptPath then
         config.vm.provision "shell", path: afterScriptPath, privileged: false
     end
