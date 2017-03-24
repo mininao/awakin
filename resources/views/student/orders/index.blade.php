@@ -13,7 +13,7 @@
                     <h3>Produits :</h3>
                     <ul>
                         @foreach ($order->products as $product)
-                            <li>{{ $product->title }} à {{ $product->price/100 }} euros</li>
+                            <li>{{ $product->pivot->quantity }}x {{ $product->title }} à {{ $product->price/100 }} euros</li>
                         @endforeach
                     </ul>
                 </div>

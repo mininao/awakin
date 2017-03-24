@@ -53,7 +53,7 @@ class DefaultTestData extends Seeder
         {
             $this->command->info('Populating order #' . $order->order_id . ' with products');
             for ($x = 0; $x <= rand(1, 4); $x++)	{
-                $order->products()->save($products->random());
+                $order->products()->attach($products->random()->id,['quantity'=>rand(1,3)]);
             }
         });
     }
