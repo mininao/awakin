@@ -27,7 +27,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.orders.create');
     }
 
     /**
