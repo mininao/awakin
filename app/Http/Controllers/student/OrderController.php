@@ -16,7 +16,7 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-      $orders = $request->user()->orders()->get();
+      $orders = $request->user()->orders()->latest()->get();
       return view('student.orders.index', compact('orders'));
     }
 
