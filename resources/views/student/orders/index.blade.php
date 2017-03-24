@@ -5,6 +5,7 @@
     <div class="row">
         <div class="">
             <h1>Mes commandes</h1>
+            <a href="/student/orders/create">Passer Commande</a>
             <hr>
             @foreach ($orders as $order)
                 <div>
