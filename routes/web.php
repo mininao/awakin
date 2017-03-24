@@ -20,7 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
-// Client routes
+// Student routes
 
-Route::get('/client/orders', 'client\OrderController@index');
-Route::get('/client/orders/{order}', 'client\OrderController@show');
+Route::get('/student/orders', 'student\OrderController@index');
+Route::get('/student/orders/create', 'student\OrderController@create');
+Route::get('/student/orders/{order}', 'student\OrderController@show');
+Route::post('/student/orders', 'student\OrderController@store');

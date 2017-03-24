@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\client;
+namespace App\Http\Controllers\student;
 
 use App\Order;
 
@@ -16,8 +16,8 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-      $orders = $request->user()->orders()->get();
-      return view('client.orders.index', compact('orders'));
+      $orders = $request->user()->orders()->latest()->get();
+      return view('student.orders.index', compact('orders'));
     }
 
     /**
@@ -27,7 +27,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.orders.create');
     }
 
     /**
@@ -38,7 +38,20 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Create the order        
+        $order = new Order();
+        $order->status = "received";
+        $order->user_id = $request->user()->id;
+        $order->order_id = $request->user()->id.crc32(date("Yzis")).rand(0,999);
+        $order->save();
+        
+        // Associate the products
+        $products = [];
+        foreach (request('product_ids') as $key => $product_id) {
+            $products[$product_id] = ['quantity' => request('product_qtys')[$key]];
+        }
+        $order->products()->sync($products);
+        return redirect('/student/orders');
     }
 
     /**
@@ -49,7 +62,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('client.orders.show', compact('order'));
+        return view('student.orders.show', compact('order'));
     }
 
     /**
