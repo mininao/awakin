@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\client;
 
-use App\Orders;
+use App\Order;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class OrdersController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        return 'test';
     }
 
     /**
@@ -41,21 +42,21 @@ class OrdersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Orders  $orders
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Orders $orders)
+    public function show(Order $order)
     {
-        //
+        return 'id='.$order->id;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Orders  $orders
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orders $orders)
+    public function edit(Order $order)
     {
         //
     }
@@ -64,10 +65,10 @@ class OrdersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Orders  $orders
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orders $orders)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -75,10 +76,10 @@ class OrdersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Orders  $orders
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Orders $orders)
+    public function destroy(Order $order)
     {
         //
     }
