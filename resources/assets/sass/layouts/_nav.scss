@@ -10,9 +10,6 @@
     font-size: 2em;
     a {
       color: inherit;
-      &:hover {
-        text-decoration: none;
-      }
     }
   }
 
@@ -22,11 +19,14 @@
     justify-content: flex-end;
   }
   .topNav-link {
-    margin: auto .25rem;
-    padding: .5em 1.33em;
-    &.topNav-link--cta {
+    margin: auto 1rem;
+    a {
+      color: inherit;
+    }
+    &.topNav-link--cta a{
       background-color: $color-alphaDarken20;
       border-radius: 50px;
+      padding: .5em 1.33em;
     }
   }
 
