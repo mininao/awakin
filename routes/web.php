@@ -24,3 +24,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/client/orders', 'client\OrderController@index');
 Route::get('/client/orders/{order}', 'client\OrderController@show');
+
+// Administrateur routes
+
+Route::get('/administrateur/product', 'administrateur\ProductController@index');
