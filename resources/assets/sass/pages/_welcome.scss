@@ -1,0 +1,29 @@
+.welcome {
+  background-image: linear-gradient(-45deg, #a8edea 0%, #fed6e3 100%);
+  background-image: linear-gradient(-25deg, #ff0844 0%, #ffb199 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .welcome-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    h1 {
+      text-align: center;
+      em {
+        font-style: normal;
+        font-size: 1.1em;
+        transition: font-size .3s;
+      }
+      &.welcome-hero-brand {
+        font-size: 5em;
+        margin: .75em auto;
+      }
+      &:hover em, &:hover + h1 em{
+        font-size: 2em;
+      }
+    }
+  }
+}
