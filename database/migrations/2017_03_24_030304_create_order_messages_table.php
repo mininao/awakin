@@ -15,6 +15,9 @@ class CreateOrderMessagesTable extends Migration
     {
         Schema::create('order_messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('order_id')->unsigned();
+            $table->text('message');
+            $table->boolean('fromUser');
             $table->timestamps();
         });
     }
