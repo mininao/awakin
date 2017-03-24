@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function index(Request $request)
     {
       $orders = $request->user()->orders()->get();
-      return view('client.orders.index', compact('orders'));
+      return view('student.orders.index', compact('orders'));
     }
 
     /**
@@ -49,7 +49,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('client.orders.show', compact('order'));
+        return view('student.orders.show', compact('order'));
     }
 
     /**
