@@ -11,13 +11,14 @@
 
 
 // Components
-
+@import "components/brand";
 
 // Layouts
 @import "layouts/nav";
 
 // Pages
 @import "pages/welcome";
+@import "pages/auth";
 
 body {
   margin: 0;

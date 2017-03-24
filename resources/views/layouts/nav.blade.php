@@ -6,15 +6,29 @@
       </a>
     </div>
     <div class="topNav-links">
-      <div class="topNav-link">
-        Features
-      </div>
-      <div class="topNav-link">
-        Comment ça marche ?
-      </div>
+      @if (Auth::guest())
+        <div class="topNav-link">
+          <a href="#">Features</a>
+        </div>
+        <div class="topNav-link">
+          <a href="#">Comment ça marche ?</a>
+        </div>
+        <div class="topNav-link topNav-link--cta">
+          <a href="{{ route('login') }}">Connexion</a>
+        </div>
+      @else
+
       <div class="topNav-link topNav-link--cta">
-        Connexion
+        <a href="{{ route('logout') }}"
+        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+        Déconnexion</a>
       </div>
+      @endif
     </div>
   </div>
 </div>
+
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  {{ csrf_field() }}
+</form>
