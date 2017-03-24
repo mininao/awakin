@@ -1,9 +1,18 @@
-
 // Fonts
 
 $font-family-sans-serif: "Nunito Sans", sans-serif;
 $headings-font-family: "Nunito", sans-serif;
 
+//Colors
+
 $color-brand: #515E77;
 $color-lightBlue: #74C9FA;
 $color-lightPink: #FA74A9;
+$color-alphaDarken20: rgba(0,0,0,0.2);
+
+$brand-primary:             $color-brand !default;
+$brand-success:             $color-lightBlue !default;
+$brand-info:                $color-lightPink !default;
+//$brand-warning:             $orange !default;
+//$brand-danger:              $red !default;
+//$brand-inverse: $gray-dark !default;

@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h1>awakin</h1>
-            <h1>Le <em>Réveil</em> des étudiants.</h1>
-        </div>
-    </div>
+
+@include('layouts.nav',['onTop'=>true])
+
+<div class="container-fluid welcome">
+  <div class="topNavSpacer"></div>
+  <div class="welcome-hero">
+      <h1 class="welcome-hero-brand">awakin</h1>
+      <h1>Le <em>Réveil</em> des étudiants.</h1>
+  </div>
 </div>
 @endsection

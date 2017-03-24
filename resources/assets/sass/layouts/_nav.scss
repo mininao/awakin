@@ -1,3 +1,44 @@
-.top-nav {
-  
+.topNav {
+
+  .row {
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  .topNav-brand {
+    font-family: $headings-font-family;
+    font-size: 2em;
+    a {
+      color: inherit;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .topNav-links {
+    @include make-col(9);
+    @include make-row();
+    justify-content: flex-end;
+  }
+  .topNav-link {
+    margin: auto .25rem;
+    padding: .5em 1.33em;
+    &.topNav-link--cta {
+      background-color: $color-alphaDarken20;
+      border-radius: 50px;
+    }
+  }
+
+  &.topNav--onTop {
+    position: fixed;
+    width: 100%;
+    z-index: $zindex-navbar;
+    color: #fff;
+  }
+}
+.topNavSpacer {
+  flex:0;
+  height: 7rem;
+  width: 100%;
 }
