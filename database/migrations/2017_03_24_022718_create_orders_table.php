@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('order_id')->unique();
             $table->string('status');
+            // Should be "received", "preparing", "awaiting_answer","refused","ready","finished"
             $table->timestamps();
         });
     }
