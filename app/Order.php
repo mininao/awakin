@@ -12,6 +12,11 @@ class Order extends Model
     return $this->belongsTo('App\User');
   }
 
+  public function orderMessages()
+  {
+    return $this->hasMany('App\orderMessages');
+  }
+
   public function products()
   {
     return $this->belongsToMany('App\Product', 'ordered_products');
