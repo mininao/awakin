@@ -5,7 +5,15 @@
     <div class="row">
         <div class="">
             <h1>Créer une commande</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Omnis et fugit eos rerum culpa molestias voluptatem eius, dolores delectus ut distinctio ducimus non reprehenderit nemo expedita natus quas temporibus exercitationem?</p>
+            <form action="/student/orders" method="post">
+                {{ csrf_field() }}
+                <h4>Produits choisis :</h4> <br>
+                <input type="text" name="product_ids[]" value="1"><input type="text" name="product_qtys[]" value="1"> <br>
+                <input type="text" name="product_ids[]" value="2"><input type="text" name="product_qtys[]" value="1"> <br>
+                <input type="text" name="product_ids[]" value="3"><input type="text" name="product_qtys[]" value="1"> <br>
+                <input type="text" name="product_ids[]" value="4"><input type="text" name="product_qtys[]" value="1"> <br>
+                <input type="submit" value="Passer commande">
+            </form>
         </div>
     </div>
 </div>

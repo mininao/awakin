@@ -25,3 +25,4 @@ Route::get('/home', 'HomeController@index');
 Route::get('/student/orders', 'student\OrderController@index');
 Route::get('/student/orders/create', 'student\OrderController@create');
 Route::get('/student/orders/{order}', 'student\OrderController@show');
+Route::post('/student/orders', 'student\OrderController@store');

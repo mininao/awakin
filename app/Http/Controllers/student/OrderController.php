@@ -38,7 +38,20 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Create the order        
+        $order = new Order();
+        $order->status = "received";
+        $order->user_id = $request->user()->id;
+        $order->order_id = $request->user()->id.crc32(date("Yzis")).rand(0,999);
+        $order->save();
+        
+        // Associate the products
+        $products = [];
+        foreach (request('product_ids') as $key => $product_id) {
+            $products[$product_id] = ['quantity' => request('product_qtys')[$key]];
+        }
+        $order->products()->sync($products);
+        return redirect('/student/orders');
     }
 
     /**
