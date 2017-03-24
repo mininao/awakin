@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Order;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,10 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return 'test';
+      $orders = $request->user()->orders()->get();
+      return view('client.orders.index', compact('orders'));
     }
 
     /**
@@ -47,7 +49,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return 'id='.$order->id;
+        return view('client.orders.show', compact('order'));
     }
 
     /**
