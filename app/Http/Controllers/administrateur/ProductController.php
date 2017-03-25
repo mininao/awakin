@@ -22,5 +22,22 @@ class ProductController extends Controller
 
     }
 
+    public function store(){
+
+        $product = new Product;
+
+        $product->title = request('title');
+        $product->description = request('description');
+        $product->price = request('price');
+        $product->isMenu = false;
+
+        $product->save();
+
+        return redirect('/administrateur/product');
+
+
+
+    }
+
 
 }

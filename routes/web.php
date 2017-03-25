@@ -28,4 +28,6 @@ Route::get('/client/orders/{order}', 'client\OrderController@show');
 // Administrateur routes
 
 Route::get('/administrateur/product', 'administrateur\ProductController@index');
+
 Route::get('/administrateur/product/create', 'administrateur\ProductController@create');
+Route::post('/administrateur/product', 'administrateur\ProductController@store');

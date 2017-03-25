@@ -9,7 +9,7 @@
         <hr>
         <ul>
             @foreach ($products as $product)
-                <li>{{ $product->title}}</li>
+                <li>{{ $product }}</li>
             @endforeach
         </ul>
     </body>
