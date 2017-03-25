@@ -5,9 +5,13 @@
         <title>Manage Product</title>
     </head>
     <body>
+
+        @include('product.addForm')
+
+        <hr>
         <ul>
             @foreach ($products as $product)
-                <li>{{ $product }}</li>
+                <li>{{ $product->title}}</li>
             @endforeach
         </ul>
     </body>

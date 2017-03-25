@@ -13,8 +13,8 @@ class ProductController extends Controller
 
         $products = Product::all();
 
-        dd(Product::all());
-
         return view('product.index', compact('products'));
     }
+
+    
 }
