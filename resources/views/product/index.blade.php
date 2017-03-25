@@ -6,8 +6,6 @@
     </head>
     <body>
 
-        @include('product.addForm')
-
         <hr>
         <ul>
             @foreach ($products as $product)
