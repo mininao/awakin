@@ -10,20 +10,12 @@
                 <tr>
                     <td>{{ $product->title }}</td>
                     <td>
-                        {{-- {!! Form::open([
+                        {{ Form::open([
                             'method' => 'DELETE',
-                            'route' => ['administrateur.product', $product->id]
-                            ]) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
-                        {!! Form::close() !!} --}}
-
-                        <form action="{{ url('administrateur/product/'.$product->id) }}" method="POST">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-
+                            'url' => 'administrateur/product/'.$product->id
+                            ]) }}
+                            {{ Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) }}
+                        {{ Form::close() }}
                     </td>
                 </tr>
 
