@@ -32,9 +32,4 @@ Route::get('/administrateur/product', 'administrateur\ProductController@index');
 
 Route::get('/administrateur/product/create', 'administrateur\ProductController@create');
 Route::post('/administrateur/product', 'administrateur\ProductController@store');
-Route::delete('/administrateur/product/{product}', function($id){
-    $product = Product::find($id);
-    $product->delete();
-
-    return redirect('/administrateur/product');
-});
+Route::delete('/administrateur/product/{product}', 'administrateur\ProductController@destroy');

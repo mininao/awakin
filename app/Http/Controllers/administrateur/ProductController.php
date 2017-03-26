@@ -35,14 +35,14 @@ class ProductController extends Controller
 
     }
 
-    // public function destroy($id){
-    //
-    //     $product = Product::find($id);
-    //     $product->delete();
-    //
-    //     return redirect('/')
-    //
-    // }
+    public function destroy($id){
+
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect('/administrateur/product');
+
+    }
 
 
 }
