@@ -6,11 +6,27 @@
     </head>
     <body>
 
-        <hr>
-        <ul>
             @foreach ($products as $product)
-                <li>{{ $product }}</li>
+                <tr>
+                    <td>{{ $product->title }}</td>
+                    <td>
+                        {{-- {!! Form::open([
+                            'method' => 'DELETE',
+                            'route' => ['administrateur.product', $product->id]
+                            ]) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
+                        {!! Form::close() !!} --}}
+
+                        <form action="{{ url('administrateur/product/'.$product->id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+
+                    </td>
+                </tr>
+
             @endforeach
-        </ul>
     </body>
 </html>
