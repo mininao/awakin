@@ -22,7 +22,13 @@ class ProductController extends Controller
 
     }
 
-    public function store(){
+    public function store(Request $request){
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
 
         $product = new Product;
         $product->title = request('title');
@@ -52,7 +58,13 @@ class ProductController extends Controller
 
     }
 
-    public function update($id){
+    public function update(Request $request, $id){
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
 
         $product = Product::find($id);
         $product->title = request('title');
