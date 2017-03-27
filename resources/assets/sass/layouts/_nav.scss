@@ -1,13 +1,12 @@
 .topNav {
-
+  
+  box-shadow: 0 0 4px 4px $color-alphaDarken20;
   .row {
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1.66rem;
   }
 
   .topNav-brand {
-    font-family: $headings-font-family;
-    font-size: 2em;
     a {
       color: inherit;
     }
@@ -34,11 +33,12 @@
     position: fixed;
     width: 100%;
     z-index: $zindex-navbar;
+    box-shadow: none;
     color: #fff;
   }
 }
 .topNavSpacer {
   flex:0;
-  height: 7rem;
+  height: 6.33rem;
   width: 100%;
 }

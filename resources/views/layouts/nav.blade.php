@@ -1,6 +1,6 @@
 <div class="container-fluid topNav {{ isset($onTop) ? 'topNav--onTop' : '' }}">
   <div class="row">
-    <div class="topNav-brand">
+    <div class="topNav-brand brand">
       <a href="{{ url('/') }}">
           awakin
       </a>
