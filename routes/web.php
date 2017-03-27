@@ -30,6 +30,6 @@ Route::get('/administrateur/product', 'administrateur\ProductController@index')-
 
 Route::get('/administrateur/product/create', 'administrateur\ProductController@create')->name('createProduct');
 Route::post('/administrateur/product', 'administrateur\ProductController@store');
-Route::delete('/administrateur/product/{product}/delete', 'administrateur\ProductController@destroy');
+Route::delete('/administrateur/product/{product}/delete', 'administrateur\ProductController@destroy')->name('deleteProduct');
 Route::get('/administrateur/product/{product}/edit', 'administrateur\ProductController@edit')->name('editProduct');
 Route::put('/administrateur/product/{product}/update', 'administrateur\ProductController@update')->name('updateProduct');

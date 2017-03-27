@@ -1,12 +1,10 @@
-{{ Form::open([
-    'method' => 'POST',
-    'route' => 'indexDashboardElior'
-    ]) }}
-    {{ Form::label('title', 'Nom du produit :') }}
-    {{ Form::text('title', '', ['placeholder' => 'Nom']) }}
-    {{ Form::label('description', 'Description :') }}
-    {{ Form::textarea('description', '', ['placeholder' => 'Description']) }}
-    {{ Form::label('price', 'Prix :') }}
-    {{ Form::text('price', '', ['placeholder' => 'Prix']) }}
-    {{ Form::submit('Envoyer !') }}
-{{ Form::close() }}
+<form method="POST" action="{{ route('indexDashboardElior') }}" accept-charset="UTF-8">
+    {{ csrf_field() }}
+    <label for="title">Nom du produit :</label>
+    <input placeholder="Nom" name="title" type="text" value="">
+    <label for="description">Description :</label>
+    <textarea placeholder="Description" name="description" cols="50" rows="10"></textarea>
+    <label for="price">Prix :</label>
+    <input placeholder="Prix" name="price" type="text" value="">
+    <input type="submit" value="Envoyer !">
+</form>

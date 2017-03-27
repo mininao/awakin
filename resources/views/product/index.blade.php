@@ -9,15 +9,14 @@
                 <tr>
                     <td>{{ $product->title }}</td>
                     <td>
-                        {{ Form::open([
-                            'method' => 'DELETE',
-                            'url' => 'administrateur/product/'.$product->id.'/delete'
-                            ]) }}
-                            {{ Form::submit('Delete') }}
-                        {{ Form::close() }}
+                        <form method="POST" action="{{ route('deleteProduct', $product) }}" accept-charset="UTF-8">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <input type="submit" value="Delete">
+                        </form>
                     </td>
                     <td>
-                        <a href="{{ route('editProduct', ['product' => $product->id]) }}">Edit</a>
+                        <a href="{{ route('editProduct', $product) }}">Edit</a>
                     </td>
                 </tr>
             @endforeach
