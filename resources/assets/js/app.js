@@ -18,3 +18,11 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+// var slideout = new Slideout({
+//   'panel': document.getElementById('mainContent'),
+//   'menu': document.getElementById('sideNav'),
+//   'padding': 256,
+//   'tolerance': 70
+// });
+// window.slideout = slideout;

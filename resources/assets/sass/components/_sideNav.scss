@@ -1,0 +1,36 @@
+@import "node_modules/slideout/index";
+
+.sideNav-nav {
+  background-color: $brand-inverse;
+  padding: 1.25rem 1rem;
+  .brand {
+    color: $brand-white;
+    text-align: center;
+    font-size: 2.5em;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .sideNav {
+    .sideNav-nav {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: $width-sideNav-large;
+      min-height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: block;
+      z-index: $zindex-navbar;
+    }
+    .sideNav-content {
+      position: relative;
+      z-index: 1;
+      will-change: transform;
+      background-color: #FFF; /* A background-color is required */
+      min-height: 100vh;
+      margin-left: $width-sideNav-large;
+    }
+  }
+}

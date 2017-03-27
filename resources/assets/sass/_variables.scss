@@ -10,15 +10,27 @@ $color-lightBlue: #74C9FA;
 $color-lightPink: #FA74A9;
 $color-alphaDarken20: rgba(0,0,0,0.2);
 
-$brand-primary:             $color-brand !default;
+$coolors1-1: rgba(250, 116, 169, 1);
+$coolors1-2: rgba(69, 105, 144, 1);
+$coolors1-3: rgba(73, 190, 170, 1);
+$coolors1-4: rgba(73, 220, 177, 1);
+$coolors1-5: rgba(238, 184, 104, 1);
+
+
+$brand-primary:             $coolors1-1 !default;
 $brand-success:             $color-lightBlue !default;
 $brand-info:                $color-lightPink !default;
 //$brand-warning:             $orange !default;
 //$brand-danger:              $red !default;
 //$brand-inverse: $gray-dark !default;
+$brand-white: white;
 
 $gradient-home: linear-gradient(-45deg, #a8edea 0%, #fed6e3 100%);
 $gradient-home: linear-gradient(-25deg, #ff0808 0%, #ffb199 100%); 
 
 // Links
 $link-hover-decoration: none;
+
+// Side Nav
+$width-sideNav-large: 20rem;
+$width-sideNav-small: 25rem;

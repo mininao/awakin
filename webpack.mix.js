@@ -15,4 +15,7 @@ const { mix } = require('laravel-mix');
     })
     .disableNotifications()
     .js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css');
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .scripts([
+        'node_modules/slideout/dist/slideout.min.js'
+    ], 'public/js/vendor.js');
