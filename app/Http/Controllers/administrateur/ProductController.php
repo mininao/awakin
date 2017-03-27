@@ -43,4 +43,25 @@ class ProductController extends Controller
         return redirect('/administrateur/product');
 
     }
+
+    public function edit($id){
+
+        $product = Product::find($id);
+
+        return view('product.edit', compact('product'));
+
+    }
+
+    public function update($id){
+
+        $product = Product::find($id);
+        $product->title = request('title');
+        $product->description = request('description');
+        $product->price = request('price');
+        $product->isMenu = false;
+        $product->save();
+
+        return redirect('/administrateur/product');
+
+    }
 }

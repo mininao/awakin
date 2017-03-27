@@ -11,8 +11,6 @@
 |
 */
 
-use App\Product;
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,8 +26,10 @@ Route::get('/client/orders/{order}', 'client\OrderController@show');
 
 // Administrateur routes
 
-Route::get('/administrateur/product', 'administrateur\ProductController@index');
+Route::get('/administrateur/product', 'administrateur\ProductController@index')->name('indexDashboardElior');
 
-Route::get('/administrateur/product/create', 'administrateur\ProductController@create');
+Route::get('/administrateur/product/create', 'administrateur\ProductController@create')->name('createProduct');
 Route::post('/administrateur/product', 'administrateur\ProductController@store');
-Route::delete('/administrateur/product/{product}', 'administrateur\ProductController@destroy');
+Route::delete('/administrateur/product/{product}/delete', 'administrateur\ProductController@destroy');
+Route::get('/administrateur/product/{product}/edit', 'administrateur\ProductController@edit')->name('editProduct');
+Route::put('/administrateur/product/{product}/update', 'administrateur\ProductController@update')->name('updateProduct');
