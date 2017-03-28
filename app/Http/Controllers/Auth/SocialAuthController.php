@@ -14,7 +14,7 @@ class SocialAuthController extends Controller
 {
     public function redirect(){
 
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->with(['hd'=>'esiee.fr'])->redirect();
 
     }
 
