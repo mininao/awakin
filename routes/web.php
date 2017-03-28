@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+// Register routes
+
+Route::get('/redirect', 'Auth\SocialAuthController@redirect');
+Route::get('/callback', 'Auth\SocialAuthController@callback');
 
 // Student routes
 
