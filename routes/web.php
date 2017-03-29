@@ -42,4 +42,4 @@ Route::delete('/administrateur/product/{product}/delete', 'administrateur\Produc
 Route::get('/administrateur/product/{product}/edit', 'administrateur\ProductController@edit')->name('editProduct');
 Route::put('/administrateur/product/{product}/update', 'administrateur\ProductController@update')->name('updateProduct');
 
-// Route::get('/administrateur/commands', 'administrateur\CommandsController@index');
+Route::get('/administrateur/commands', 'administrateur\CommandsController@index');

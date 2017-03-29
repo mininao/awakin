@@ -19,12 +19,12 @@ class ProductController extends Controller
 
         $products = Product::all();
 
-        return view('administrateur.product.index', compact('products'));
+        return view('administrateur.products.index', compact('products'));
     }
 
     public function create(){
 
-        return view('administrateur.product.create');
+        return view('administrateur.products.create');
 
     }
 
@@ -60,7 +60,7 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
-        return view('administrateur.product.edit', compact('product'));
+        return view('administrateur.products.edit', compact('product'));
 
     }
 
