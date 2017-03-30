@@ -18,17 +18,7 @@ class DefaultTestData extends Seeder
     public function run()
     {
 
-        // Create a test user, if it doesn't already exists.
-        if(!User::first()) {
-            $this->command->info('Zero users found, generating test user');
-            User::create([
-                'name' => "Max",
-                'email' => "max@max.max",
-                'password' => bcrypt("maxmax")
-            ]);    
-        }
-        
-        // And a bunch of others
+        // And a bunch of fake google users
         $this->command->info('Generating ten more users');
         factory(User::class , 10)->create();
 
