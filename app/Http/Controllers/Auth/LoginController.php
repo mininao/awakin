@@ -51,7 +51,7 @@ class LoginController extends Controller
 
     public function callback($provider = 'google'){
 
-        $user = Socialite::driver($provider)->user();
+        $user = Socialite::driver($provider)->stateless()->user();
 
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
