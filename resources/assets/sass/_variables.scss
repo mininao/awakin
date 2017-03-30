@@ -16,13 +16,20 @@ $coolors1-3: rgba(73, 190, 170, 1);
 $coolors1-4: rgba(73, 220, 177, 1);
 $coolors1-5: rgba(238, 184, 104, 1);
 
+$colors3-purple: #AA81F3;
+$colors3-blue: #0094F7;
+$colors3-yellow: #F9C908;  
+$colors3-red:#FF5A4D;
+$colors3-darkblue: #182433;
 
-$brand-primary:             $coolors1-1 !default;
-$brand-success:             $color-lightBlue !default;
-$brand-info:                $color-lightPink !default;
-//$brand-warning:             $orange !default;
-//$brand-danger:              $red !default;
-//$brand-inverse: $gray-dark !default;
+
+
+$brand-primary:             $colors3-purple;
+$brand-success:             $colors3-blue;
+$brand-warning:             $colors3-yellow;
+$brand-danger:              $colors3-red;
+$brand-inverse:             $colors3-darkblue;
+$brand-light-inverse:       lighten($brand-inverse,10%);
 $brand-white: white;
 
 $gradient-home: linear-gradient(-45deg, #a8edea 0%, #fed6e3 100%);

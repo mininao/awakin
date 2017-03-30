@@ -1,12 +1,46 @@
 @import "node_modules/slideout/index";
 
 .sideNav-nav {
-  background-color: $brand-inverse;
-  padding: 1.25rem 1rem;
+  background-color: $brand-light-inverse;
   .brand {
     color: $brand-white;
     text-align: center;
     font-size: 2.5em;
+    padding:2rem 0;
+    background-color: $brand-inverse;
+  }
+  .sideNav-cta {
+    margin: 2.5rem 0 1.5rem 0;
+    text-align: center;
+    i {
+      margin-right: .5em;
+    }
+    a {
+      font-size: 1.33em;
+    }
+  }
+  .sideNav-menu {
+    .sideNav-menu-item {
+      padding:1rem 0;
+      margin: 0 1.5rem;
+      font-size: 1.33em;
+      color: inherit;
+      line-height: 0.66em;
+      color: $brand-white;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      // >div {
+      //   display: inline-block;
+      // }
+      .sideNav-menu-item-icon {
+        width: 3rem;
+        text-align: center;
+        i  {
+          font-size: 1.33em;
+        }
+      }
+    }
   }
 }
 
