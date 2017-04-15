@@ -3,7 +3,7 @@
 @section('student-content')
 <div class="container">
     <div class="takeOrderCTA">
-        <h1>Bienvenue sur awakin</h1>
+        
     </div>
     <div class="row">
         <div class="smallOverview smallOverview--profile">
@@ -30,8 +30,8 @@
 <svg width="0" height="0">
   <defs>
     <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#FA74A9" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#FA74A9" stop-opacity="0.7"/>
+      <stop offset="0%"   stop-color="#0094F7" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0094F7" stop-opacity="0.7"/>
     </linearGradient>
   </defs>
 </svg>
@@ -47,7 +47,7 @@ var profileData = {
   line: {shape: 'spline',smoothing:0.5},
   fill:"tonexty",
   marker: {
-    color: '#FA74A9',
+    color: '#0094F7',
     line: {
         width: 2.5
     }
