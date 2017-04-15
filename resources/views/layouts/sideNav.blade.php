@@ -37,7 +37,18 @@
         </div>
     </nav>
     <main class="sideNav-content" id="sideNav-content">
-        @include('layouts.titleBar')
+        <div class="sideNav-content-mobileBar">
+            <a href="#" class="sideNav-toggle">
+                <div class="sideNav-content-mobileBar-menuIcon">
+                    <i class="ion-ios-menu"></i>
+                </div>
+            </a>
+            <a href="/student/">
+                <h1 class="brand">
+                    awakin
+                </h1>
+            </a>
+        </div>
         @yield('student-content')
     </main>
 </div>

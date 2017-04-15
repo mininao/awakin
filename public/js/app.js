@@ -976,13 +976,16 @@ var app = new Vue({
   el: '#app'
 });
 
-// var slideout = new Slideout({
-//   'panel': document.getElementById('mainContent'),
-//   'menu': document.getElementById('sideNav'),
-//   'padding': 256,
-//   'tolerance': 70
-// });
-// window.slideout = slideout;
+var slideout = new Slideout({
+  'panel': document.getElementById('sideNav-content'),
+  'menu': document.getElementById('sideNav-nav'),
+  'padding': 256,
+  'tolerance': 70
+});
+document.querySelector('.sideNav-toggle').addEventListener('click', function () {
+  slideout.toggle();
+});
+window.slideout = slideout;
 
 /***/ }),
 /* 10 */

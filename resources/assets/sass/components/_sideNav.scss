@@ -8,6 +8,7 @@
     font-size: 2em;
     padding:2rem 0;
     background-color: $brand-inverse;
+    display: none;
   }
   .sideNav-cta {
     margin: 2rem 0 1rem 0;
@@ -43,6 +44,28 @@
     }
   }
 }
+.sideNav-content {
+  background-color: #FFF;
+  min-height: 100vh;
+  .sideNav-content-mobileBar {
+    .sideNav-content-mobileBar-menuIcon {
+      position: absolute;
+      color: white;
+      i {
+        line-height: 3.7rem;
+        font-size: 1.5em;
+        margin:0 1.33rem;
+      }
+    }
+    .brand {
+      color: $brand-white;
+      text-align: center;
+      font-size: 1.33em;
+      padding:1rem 0;
+      background-color: $brand-inverse;
+    }
+  }
+}
 
 @include media-breakpoint-up(md) {
   .sideNav {
@@ -57,14 +80,19 @@
       -webkit-overflow-scrolling: touch;
       display: block;
       z-index: $zindex-navbar;
+      .brand {
+        display: block;
+      }
     }
     .sideNav-content {
       position: relative;
       z-index: 1;
-      will-change: transform;
-      background-color: #FFF; /* A background-color is required */
+      will-change: transform; /* A background-color is required */
       min-height: 100vh;
       margin-left: $width-sideNav-large;
+      .sideNav-content-mobileBar {
+        display: none;
+      }
     }
   }
 }
