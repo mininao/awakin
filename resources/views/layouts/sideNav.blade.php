@@ -3,16 +3,18 @@
 @section('content')
 <div class="sideNav">
     <nav class="sideNav-nav" id="sideNav-nav">
-        <h1 class="brand">
-            awakin
-        </h1>
+        <a href="/student/">
+            <h1 class="brand">
+                awakin
+            </h1>
+        </a>
         <div class="sideNav-cta">
             <a href="/student/orders/create" class="btn btn-primary btn-lg">
                 <i class="ion-ios-cart"></i> Commander
             </a>
         </div>
         <div class="sideNav-menu">
-            <a href="#">
+            <a href="/student/">
                 <div class="sideNav-menu-item">
                     <div class="sideNav-menu-item-icon">
                         <i class="ion-ios-person"></i>
@@ -22,7 +24,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#">
+            <a href="/student/orders">
                 <div class="sideNav-menu-item">
                     <div class="sideNav-menu-item-icon">
                         <i class="ion-ios-list-box"></i>
