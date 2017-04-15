@@ -5,6 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use Socialite;
+use Auth;
+use App\User;
+
 class LoginController extends Controller
 {
     /*
@@ -25,7 +31,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/student/';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +41,36 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+
+    public function redirect(){
+
+        return Socialite::driver('google')->with(['hd'=>'esiee.fr'])->redirect();
+
+    }
+
+    public function callback($provider = 'google'){
+
+        $user = Socialite::driver($provider)->stateless()->user();
+
+        $authUser = $this->findOrCreateUser($user, $provider);
+        Auth::login($authUser, true);
+        return redirect('/home');
+
+    }
+
+    public function findOrCreateUser($user, $provider){
+
+        $authUser = User::where('provider_id', $user->id)->first();
+        if ($authUser) {
+            return $authUser;
+        }
+        return User::create([
+            'name'     => $user->name,
+            'email'    => $user->email,
+            'provider' => $provider,
+            'provider_id' => $user->id
+        ]);
+
     }
 }

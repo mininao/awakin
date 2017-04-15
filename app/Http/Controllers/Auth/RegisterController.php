@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/student';
 
     /**
      * Create a new controller instance.
@@ -67,5 +67,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    protected function showRegistrationForm()
+    {
+        return redirect()->to('login')->with('warning', 'Registration is disabled.');
     }
 }

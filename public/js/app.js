@@ -976,17 +976,6 @@ var app = new Vue({
   el: '#app'
 });
 
-var slideout = new Slideout({
-  'panel': document.getElementById('sideNav-content'),
-  'menu': document.getElementById('sideNav-nav'),
-  'padding': 256,
-  'tolerance': 70
-});
-document.querySelector('.sideNav-toggle').addEventListener('click', function () {
-  slideout.toggle();
-});
-window.slideout = slideout;
-
 /***/ }),
 /* 10 */
 /***/ (function(module, exports) {
@@ -2376,6 +2365,7 @@ jQuery.extend( {
 					ret.push( value );
 				}
 			}
+		}
 
 		// Go through every key on the object,
 		} else {
