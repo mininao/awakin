@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -976,6 +976,17 @@ var app = new Vue({
   el: '#app'
 });
 
+var slideout = new Slideout({
+  'panel': document.getElementById('sideNav-content'),
+  'menu': document.getElementById('sideNav-nav'),
+  'padding': 256,
+  'tolerance': 70
+});
+document.querySelector('.sideNav-toggle').addEventListener('click', function () {
+  slideout.toggle();
+});
+window.slideout = slideout;
+
 /***/ }),
 /* 10 */
 /***/ (function(module, exports) {
@@ -1886,7 +1897,7 @@ window.Vue = __webpack_require__(36);
 window.axios = __webpack_require__(11);
 
 window.axios.defaults.headers.common = {
-  //'X-CSRF-TOKEN': window.Laravel.csrfToken,
+  'X-CSRF-TOKEN': window.Laravel.csrfToken,
   'X-Requested-With': 'XMLHttpRequest'
 };
 
@@ -2365,7 +2376,6 @@ jQuery.extend( {
 					ret.push( value );
 				}
 			}
-		}
 
 		// Go through every key on the object,
 		} else {
@@ -3590,8 +3600,6 @@ Expr = Sizzle.selectors = {
 			if ( match[2] === "~=" ) {
 				match[3] = " " + match[3] + " ";
 			}
-		};
-	}
 
 			return match.slice( 0, 4 );
 		},
@@ -4705,9 +4713,6 @@ return Sizzle;
 })( window );
 
 
-	if ( cached ) {
-		return parseOnly ? 0 : cached.slice( 0 );
-	}
 
 jQuery.find = Sizzle;
 jQuery.expr = Sizzle.selectors;
@@ -4721,18 +4726,7 @@ jQuery.contains = Sizzle.contains;
 jQuery.escapeSelector = Sizzle.escape;
 
 
-		matched = false;
 
-		// Combinators
-		if ( (match = rcombinators.exec( soFar )) ) {
-			matched = match.shift();
-			tokens.push({
-				value: matched,
-				// Cast descendant combinators to space
-				type: match[0].replace( rtrim, " " )
-			});
-			soFar = soFar.slice( matched.length );
-		}
 
 var dir = function( elem, dir, until ) {
 	var matched = [],
@@ -4849,8 +4843,6 @@ jQuery.fn.extend( {
 		for ( i = 0; i < len; i++ ) {
 			jQuery.find( selector, self[ i ], ret );
 		}
-	});
-}
 
 		return len > 1 ? jQuery.uniqueSort( ret ) : ret;
 	},
@@ -5791,8 +5783,6 @@ jQuery.Deferred.exceptionHook = function( error, stack ) {
 	}
 };
 
-		// Index of currently firing callback (modified by add/remove as needed)
-		firingIndex = -1,
 
 
 
@@ -6539,7 +6529,6 @@ function getDefaultDisplay( elem ) {
 	if ( display ) {
 		return display;
 	}
-} );
 
 	temp = doc.body.appendChild( doc.createElement( nodeName ) );
 	display = jQuery.css( temp, "display" );
@@ -7614,6 +7603,7 @@ function cloneCopyEvent( src, dest ) {
 				}
 			}
 		}
+	}
 
 	// 2. Copy user data
 	if ( dataUser.hasData( src ) ) {
@@ -7662,7 +7652,6 @@ function domManip( collection, args, callback, ignored ) {
 			domManip( self, args, callback, ignored );
 		} );
 	}
-}, jQuery.event.addProp );
 
 	if ( l ) {
 		fragment = buildFragment( args, collection[ 0 ].ownerDocument, false, collection, ignored );
@@ -7923,7 +7912,6 @@ jQuery.fn.extend( {
 			if ( value === undefined && elem.nodeType === 1 ) {
 				return elem.innerHTML;
 			}
-		}
 
 			// See if we can take a shortcut and just use innerHTML
 			if ( typeof value === "string" && !rnoInnerhtml.test( value ) &&
@@ -8096,14 +8084,6 @@ var getStyles = function( elem ) {
 	} );
 } )();
 
-	append: function() {
-		return domManip( this, arguments, function( elem ) {
-			if ( this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9 ) {
-				var target = manipulationTarget( this, elem );
-				target.appendChild( elem );
-			}
-		} );
-	},
 
 function curCSS( elem, name, computed ) {
 	var width, minWidth, maxWidth, ret,
@@ -8448,8 +8428,6 @@ jQuery.extend( {
 		if ( !isCustomProp ) {
 			name = finalPropName( origName );
 		}
-	};
-}
 
 		// Try prefixed name followed by the unprefixed name
 		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
@@ -8590,11 +8568,8 @@ jQuery.fn.extend( {
 				jQuery.css( elem, name );
 		}, name, value, arguments.length > 1 );
 	}
+} );
 
-	// Check for style in case a browser which returns unreliable values
-	// for getComputedStyle silently falls back to the reliable elem.style
-	valueIsBorderBox = isBorderBox &&
-		( support.boxSizingReliable() || val === elem.style[ name ] );
 
 function Tween( elem, options, prop, end, easing ) {
 	return new Tween.prototype.init( elem, options, prop, end, easing );
@@ -8862,8 +8837,6 @@ function defaultPrefilter( elem, props, opts ) {
 				display = jQuery.css( elem, "display" );
 				showHide( [ elem ] );
 			}
-
-			return setPositiveNumber( elem, value, subtract );
 		}
 
 		// Animate inline elements as inline-block
@@ -8882,8 +8855,6 @@ function defaultPrefilter( elem, props, opts ) {
 				}
 				style.display = "inline-block";
 			}
-
-			return expanded;
 		}
 	}
 
@@ -9128,7 +9099,6 @@ jQuery.Animation = jQuery.extend( Animation, {
 		} else {
 			props = props.match( rnothtmlwhite );
 		}
-	}
 
 		var prop,
 			index = 0,
@@ -9311,16 +9281,6 @@ jQuery.fn.extend( {
 				if ( queue[ index ] && queue[ index ].finish ) {
 					queue[ index ].finish.call( this );
 				}
-			} );
-		}
-
-		// Per-property setup
-		propTween = createTween( hidden ? dataShow[ prop ] : 0, prop, anim );
-		if ( !( prop in dataShow ) ) {
-			dataShow[ prop ] = propTween.start;
-			if ( hidden ) {
-				propTween.end = propTween.start;
-				propTween.start = 0;
 			}
 
 			// Turn off finishing flag
@@ -9455,6 +9415,7 @@ jQuery.fn.extend( {
 			jQuery.removeAttr( this, name );
 		} );
 	}
+} );
 
 jQuery.extend( {
 	attr: function( elem, name, value ) {
@@ -9516,18 +9477,6 @@ jQuery.extend( {
 					return value;
 				}
 			}
-
-			// Start the next in the queue if the last step wasn't forced.
-			// Timers currently will call their complete callbacks, which
-			// will dequeue but only if they were gotoEnd.
-			if ( dequeue || !gotoEnd ) {
-				jQuery.dequeue( this, type );
-			}
-		} );
-	},
-	finish: function( type ) {
-		if ( type !== false ) {
-			type = type || "fx";
 		}
 	},
 
@@ -9727,7 +9676,6 @@ jQuery.each( [
 		var tokens = value.match( rnothtmlwhite ) || [];
 		return tokens.join( " " );
 	}
-} );
 
 
 function getClass( elem ) {
@@ -10251,11 +10199,6 @@ jQuery.fn.extend( {
 	}
 } );
 
-		// Allow special events to draw outside the lines
-		special = jQuery.event.special[ type ] || {};
-		if ( !onlyHandlers && special.trigger && special.trigger.apply( elem, data ) === false ) {
-			return;
-		}
 
 jQuery.each( ( "blur focus focusin focusout resize scroll click dblclick " +
 	"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
@@ -10330,13 +10273,6 @@ var nonce = jQuery.now();
 var rquery = ( /\?/ );
 
 
-	// Handle event binding
-	jQuery.fn[ name ] = function( data, fn ) {
-		return arguments.length > 0 ?
-			this.on( name, null, data, fn ) :
-			this.trigger( name );
-	};
-} );
 
 // Cross-browser xml parsing
 jQuery.parseXML = function( data ) {
@@ -10478,7 +10414,6 @@ jQuery.fn.extend( {
 	}
 } );
 
-	} else if ( !traditional && jQuery.type( obj ) === "object" ) {
 
 var
 	r20 = /%20/g,
@@ -10855,7 +10790,6 @@ jQuery.extend( {
 			options = url;
 			url = undefined;
 		}
-	},
 
 		// Force options to be an object
 		options = options || {};
@@ -12149,7 +12083,6 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 	} );
 } );
 
-jQuery.fn.extend( {
 
 jQuery.fn.extend( {
 
@@ -29349,7 +29282,7 @@ var Component = __webpack_require__(34)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/adrien/Documents/Projets/awakin/resources/assets/js/components/Example.vue"
+Component.options.__file = "A:\\Documents\\websites\\awakin\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 

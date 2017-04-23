@@ -1,7 +1,7 @@
 @extends('layouts.student') @section('student-content')
-<div class="container">
-    <div class="row align-items-center">
-        <div class="col-md-6 col-md-offset-3 orders">
+<section class="container order">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 orders">
             <h1>Créer une commande</h1>
             <i class="ios-cafe"></i>
             <form action="/student/orders" method="post">
@@ -44,5 +44,5 @@
             </form>
         </div>
     </div>
-</div>
+</section>
 @endsection

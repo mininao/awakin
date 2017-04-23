@@ -16,4 +16,9 @@ input[type=submit] {
     transition: all 0.2s ease-in-out;
     cursor: pointer;
   }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    border-radius: 0;
+  }
+
 }

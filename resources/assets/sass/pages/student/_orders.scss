@@ -1,57 +1,59 @@
-.orders {
-  margin-top: 70px;
+section.order {
+  .orders {
+    margin-top: 70px;
 
-  .nav {
-    margin: 10px 0;
+    .nav {
+      margin: 10px 0;
 
-    .active {
-      position: relative;
+      .active {
+        position: relative;
 
-      &::after {
-        content: " ";
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background-color: $color-lightPink;
-        position: absolute;
-        right: 45%;
-        bottom: 0;
+        &::after {
+          content: " ";
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: $color-lightPink;
+          position: absolute;
+          right: 45%;
+          bottom: 0;
+        }
+      }
+
+      i {
+        font-size: 2em;
+        margin: 1em;
+        color: lighten($color-brand, 10);
       }
     }
 
-    i {
-      font-size: 2em;
-      margin: 1em;
-      color: lighten($color-brand, 10);
-    }
-  }
+    .order-tab {
+      &__head {
+        text-transform: uppercase;
+        color: lighten($color-brand, 40);
+      }
 
-  .order-tab {
-    &__head {
-      text-transform: uppercase;
-      color: lighten($color-brand, 40);
-    }
+      &__quantity-button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        border: 2px solid lighten($color-brand, .5);
+        background: $brand-white;
+        font-weight: bolder;
+        font-family: inherit;
+        font-size: 1.4em;
+        line-height: 0;
+        cursor: pointer;
+        color: lighten($color-brand, .5);
 
-    &__quantity-button {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      text-align: center;
-      border: 2px solid lighten($color-brand, .5);
-      background: $brand-white;
-      font-weight: bolder;
-      font-family: inherit;
-      font-size: 1.4em;
-      line-height: 0;
-      cursor: pointer;
-      color: lighten($color-brand, .5);
+        &--default {}
 
-      &--default {}
-
-      &--active {
-        background-color: $color-lightPink;
-        color: $brand-white;
-        border: none;
+        &--active {
+          background-color: $color-lightPink;
+          color: $brand-white;
+          border: none;
+        }
       }
     }
   }
