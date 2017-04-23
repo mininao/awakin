@@ -1,35 +1,13 @@
 // General Student Template
 
-.studentContent {
-  margin-top: 2rem;
-}
-
-
-
 // Student Dashboard
- 
-.takeOrderCTA {
-  h1 {
-    text-align: center;
-    font-weight: 800;
-  }
+
+.smallOverview-titleBar-credit {
+  font-size: 2em;
+  color: $brand-success;
 }
 
-.smallOverview {
-  @include make-col(6);
-  padding: 0 1.5rem;
-  
-  .smallOverview-titleBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .smallOverview-titleBar-credit {
-      font-size: 2em;
-      color: $brand-success;
-    }
-  }
-  .js-fill.js-tozero {
-    fill:url(#linear) !important;
-    fill-opacity: 1 !important;
-  }
+.js-fill.js-tozero {
+  fill: url("#linear") !important;
+  fill-opacity: 1 !important;
 }
