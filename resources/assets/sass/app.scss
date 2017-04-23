@@ -1,16 +1,15 @@
 // Variables
 @import "variables";
-
 @import "bootstrap";
 @import "node_modules/ionicons/dist/scss/ionicons";
 
 // Helpers
 
-
 // Components
 @import "components/brand";
 @import "components/sideNav";
 @import "components/titleBar";
+@import "components/button";
 
 // Layouts
 @import "layouts/nav";
@@ -23,4 +22,8 @@
 
 body {
   margin: 0;
+}
+
+h1 {
+  font-weight: bold;
 }
