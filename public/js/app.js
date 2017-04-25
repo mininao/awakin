@@ -1103,11 +1103,22 @@ var orderlist = new Vue({
   el: '#orderlist'
 });
 
+var slideout = new Slideout({
+  'panel': document.getElementById('sideNav-content'),
+  'menu': document.getElementById('sideNav-nav'),
+  'padding': 256,
+  'tolerance': 70
+});
+document.querySelector('.sideNav-toggle').addEventListener('click', function () {
+  slideout.toggle();
+});
+window.slideout = slideout;
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \n@import \"node_modules/ionicons/dist/scss/ionicons\";\n^\n      File to import not found or unreadable: node_modules/ionicons/dist/scss/ionicons.\nParent style sheet: stdin\n      in /Users/adrien/Documents/Projets/awakin/resources/assets/sass/app.scss (line 5, column 1)\n    at runLoaders (/Users/adrien/Documents/Projets/awakin/node_modules/webpack/lib/NormalModule.js:192:19)\n    at /Users/adrien/Documents/Projets/awakin/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/adrien/Documents/Projets/awakin/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/adrien/Documents/Projets/awakin/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Users/adrien/Documents/Projets/awakin/node_modules/sass-loader/lib/loader.js:51:13)\n    at Object.<anonymous> (/Users/adrien/Documents/Projets/awakin/node_modules/sass-loader/node_modules/async/dist/async.js:2234:31)\n    at apply (/Users/adrien/Documents/Projets/awakin/node_modules/sass-loader/node_modules/async/dist/async.js:20:25)\n    at Object.<anonymous> (/Users/adrien/Documents/Projets/awakin/node_modules/sass-loader/node_modules/async/dist/async.js:56:12)\n    at Object.callback (/Users/adrien/Documents/Projets/awakin/node_modules/sass-loader/node_modules/async/dist/async.js:844:16)\n    at options.error (/Users/adrien/Documents/Projets/awakin/node_modules/node-sass/lib/index.js:294:32)");
 
 /***/ }),
 /* 14 */

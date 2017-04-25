@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.nav')
-    <div class="studentContent">
+    @include('layouts.sideNav')
+    <div class="studentContent" id="mainContent">
         @yield('student-content')
     </div>
 @endsection
