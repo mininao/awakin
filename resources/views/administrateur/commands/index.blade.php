@@ -12,10 +12,7 @@
 
     </head>
     <body>
-        <h1>Chatroom</h1>
-        <div id="app">
-            <example></example>
-        </div>
+
         <div id="orderlist">
             <orderlist></orderlist>
         </div>

@@ -1,5 +1,18 @@
 <template>
-    <table id="orderlist">
+    <div class="productlsit">
+        <div class="product" v-for="order in orders">
+            <p>Commande n° {{order.id}}</p>
+            <ul>
+                <li v-for="product in order.products">
+                    {{product.name}}
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+    <!-- <table>
         <thead>
             <tr>
                 <th>
@@ -23,7 +36,7 @@
                 </td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
 </template>
 
 <script>

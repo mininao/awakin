@@ -17,14 +17,14 @@ Vue.use(VueFire);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-Vue.component('example', require('./components/Example.vue'));
+//
+// Vue.component('example', require('./components/Example.vue'));
 
 Vue.component('orderlist', require('./components/OrderList.vue'));
 
-new Vue({
-    el: '#app'
-});
+// new Vue({
+//     el: '#app'
+// });
 
 var orderlist = new Vue({
     el: '#orderlist'
