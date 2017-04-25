@@ -7,6 +7,11 @@
 
 require('./bootstrap');
 
+import VueFire from 'vuefire';
+import OrderList from './components/OrderList.vue';
+
+Vue.use(VueFire);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -15,6 +20,12 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
+Vue.component('orderlist', require('./components/OrderList.vue'));
+
+new Vue({
     el: '#app'
+});
+
+var orderlist = new Vue({
+    el: '#orderlist'
 });
