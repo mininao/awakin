@@ -1979,7 +1979,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -2005,9 +2004,6 @@ var orderRef = db.ref('orders');
     methods: {
         updateStatus: function updateStatus(order, newStatus) {
             orderRef.child(order['.key']).child('status').set(newStatus);
-            if (newStatus == 'recovered') {
-                orderRef.child(order['.key']).remove();
-            }
         }
     }
 });
@@ -2070,7 +2066,7 @@ window.axios.defaults.headers.common = {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(35)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 35 */
@@ -30405,7 +30401,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "productlsit"
   }, _vm._l((_vm.orders), function(order) {
-    return _c('div', {
+    return (!(order.status == 'recovered')) ? _c('div', {
       staticClass: "product"
     }, [_c('p', [_vm._v("Commande n° " + _vm._s(order['.key']))]), _vm._v(" "), _c('ul', _vm._l((order.products), function(product) {
       return _c('li', [_vm._v("\n                " + _vm._s(product.name) + "\n            ")])
@@ -30427,7 +30423,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.updateStatus(order, 'recovered')
         }
       }
-    }, [_vm._v("Récupérée")])])
+    }, [_vm._v("Récupérée")])]) : _vm._e()
   }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true

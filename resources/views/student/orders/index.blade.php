@@ -16,7 +16,9 @@
                         @foreach ($order->products as $product)
                             <li>{{ $product->pivot->quantity }}x {{ $product->title }} à {{ $product->price/100 }} euros</li>
                         @endforeach
+
                     </ul>
+                    <h3>Date : {{$order->created_at}}</h3>
                 </div>
                 <hr>
             @endforeach

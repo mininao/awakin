@@ -1,6 +1,6 @@
 <template>
     <div class="productlsit">
-        <div class="product" v-for="order in orders">
+        <div class="product" v-for="order in orders" v-if="!(order.status == 'recovered')">
             <p>Commande n° {{order['.key']}}</p>
             <ul>
                 <li v-for="product in order.products">
@@ -10,7 +10,6 @@
             <button v-on:click="updateStatus(order, 'preparing')">En préparation</button>
             <button v-on:click="updateStatus(order, 'ready')">Prête</button>
             <button v-on:click="updateStatus(order, 'recovered')">Récupérée</button>
-
         </div>
     </div>
 </template>
@@ -41,9 +40,6 @@ export default {
     methods: {
         updateStatus: function(order, newStatus){
             orderRef.child(order['.key']).child('status').set(newStatus);
-            if(newStatus == 'recovered'){
-                orderRef.child(order['.key']).remove();
-            }
         }
     }
 }
