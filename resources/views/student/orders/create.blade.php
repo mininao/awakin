@@ -7,11 +7,19 @@
             <form action="/student/orders" method="post">
                 {{ csrf_field() }}
                 <h4>Produits choisis :</h4> <br>
+                
                 <ul class="nav nav-pills justify-content-around" id="myTab">
-                    <li role="presentation" class="active nav-item"><a href="#boisson"><i class="ion-ios-cafe"></i></a></li>
-                    <li role="presentation"><a href="#sucrerie" class="nav-item"><i class="ion-ios-ice-cream"></i></a></li>
-                    <li role="presentation"><a href="#" class="nav-item"><i class="ion-ios-pizza"></i></a></li>
+                    <li role="presentation" class="nav-item active">
+                        <a href="#boisson" data-toggle="tab"><i class="ion-ios-cafe"></i></a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a href="#sucrerie" data-toggle="tab"><i class="ion-ios-ice-cream"></i></a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a href="#sale" data-toggle="tab"><i class="ion-ios-pizza"></i></a>
+                    </li>
                 </ul>
+                
                 <div class="tab-content order-tab">
                     <div class="tab-pane active" id="boisson" role="tabpanel">
                         <table class="table product-table">
@@ -35,8 +43,7 @@
                         </table>
                     </div>
                     <div class="tab-pane" id="sucrerie" role="tabpanel">pane 2</div>
-                    <div class="tab-pane" id="messages" role="tabpanel">pane 3</div>
-                    <div class="tab-pane" id="settings" role="tabpanel">pane 4</div>
+                    <div class="tab-pane" id="sale" role="tabpanel">pane 3</div>
                 </div>
                 <div class="row justify-content-center">
                     <input type="submit" value="Valider (montant total)">
