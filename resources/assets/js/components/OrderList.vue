@@ -1,42 +1,18 @@
 <template>
     <div class="productlsit">
         <div class="product" v-for="order in orders">
-            <p>Commande n° {{order.id}}</p>
+            <p>Commande n° {{order['.key']}}</p>
             <ul>
                 <li v-for="product in order.products">
                     {{product.name}}
                 </li>
             </ul>
-
+            <button v-on:click="updateStatus(order, 'preparing')">En préparation</button>
+            <button v-on:click="updateStatus(order, 'ready')">Prête</button>
+            <button v-on:click="updateStatus(order, 'recovered')">Récupérée</button>
 
         </div>
     </div>
-
-    <!-- <table>
-        <thead>
-            <tr>
-                <th>
-                    Property 1
-                </th>
-                <th>
-                    Property 2
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="order in orders">
-                <td>
-                    {{order.id}}
-                </td>
-                <td>
-                    {{order.name}}
-                </td>
-                <td>
-                    {{order.age}}
-                </td>
-            </tr>
-        </tbody>
-    </table> -->
 </template>
 
 <script>
@@ -61,6 +37,14 @@ export default {
     name: 'orderlist',
     firebase: {
         orders: orderRef
+    },
+    methods: {
+        updateStatus: function(order, newStatus){
+            orderRef.child(order['.key']).child('status').set(newStatus);
+            if(newStatus == 'recovered'){
+                orderRef.child(order['.key']).remove();
+            }
+        }
     }
 }
 </script>

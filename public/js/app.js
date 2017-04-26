@@ -1090,14 +1090,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuefire___default.a);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-//
-// Vue.component('example', require('./components/Example.vue'));
 
 Vue.component('orderlist', __webpack_require__(11));
-
-// new Vue({
-//     el: '#app'
-// });
 
 var orderlist = new Vue({
   el: '#orderlist'
@@ -1986,30 +1980,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2031,6 +2001,14 @@ var orderRef = db.ref('orders');
     name: 'orderlist',
     firebase: {
         orders: orderRef
+    },
+    methods: {
+        updateStatus: function updateStatus(order, newStatus) {
+            orderRef.child(order['.key']).child('status').set(newStatus);
+            if (newStatus == 'recovered') {
+                orderRef.child(order['.key']).remove();
+            }
+        }
     }
 });
 
@@ -2092,7 +2070,7 @@ window.axios.defaults.headers.common = {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(35)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 35 */
@@ -30429,9 +30407,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.orders), function(order) {
     return _c('div', {
       staticClass: "product"
-    }, [_c('p', [_vm._v("Commande n° " + _vm._s(order.id))]), _vm._v(" "), _c('ul', _vm._l((order.products), function(product) {
+    }, [_c('p', [_vm._v("Commande n° " + _vm._s(order['.key']))]), _vm._v(" "), _c('ul', _vm._l((order.products), function(product) {
       return _c('li', [_vm._v("\n                " + _vm._s(product.name) + "\n            ")])
-    }))])
+    })), _vm._v(" "), _c('button', {
+      on: {
+        "click": function($event) {
+          _vm.updateStatus(order, 'preparing')
+        }
+      }
+    }, [_vm._v("En préparation")]), _vm._v(" "), _c('button', {
+      on: {
+        "click": function($event) {
+          _vm.updateStatus(order, 'ready')
+        }
+      }
+    }, [_vm._v("Prête")]), _vm._v(" "), _c('button', {
+      on: {
+        "click": function($event) {
+          _vm.updateStatus(order, 'recovered')
+        }
+      }
+    }, [_vm._v("Récupérée")])])
   }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true
