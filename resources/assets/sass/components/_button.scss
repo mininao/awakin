@@ -1,0 +1,23 @@
+input[type=submit] {
+  margin: 0 auto;
+  background: $color-lightPink;
+  padding: 1em 2em;
+  color: $white;
+  font-family: inherit;
+  border: none;
+  border-radius: 0.25em;
+  align-self: center;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: lighten($color-lightPink, 2%);
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.2);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    border-radius: 0;
+  }
+}
