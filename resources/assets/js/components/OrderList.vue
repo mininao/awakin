@@ -1,6 +1,6 @@
 <template>
     <div class="productlsit">
-        <div class="product" v-for="order in orders" v-if="!(order.status == 'recovered')">
+        <div class="product" v-for="order in reverse(orders)" v-if="!(order.status == 'recovered')">
             <p>Commande n° {{order['.key']}}</p>
             <ul>
                 <li v-for="product in order.products">
@@ -10,12 +10,12 @@
             <button v-on:click="updateStatus(order, 'preparing')">En préparation</button>
             <button v-on:click="updateStatus(order, 'ready')">Prête</button>
             <button v-on:click="updateStatus(order, 'recovered')">Récupérée</button>
+            <p>{{ order.created_at | moment }}</p>
         </div>
     </div>
 </template>
 
 <script>
-
 
 import Firebase from 'firebase';
 
@@ -35,11 +35,20 @@ let orderRef = db.ref('orders');
 export default {
     name: 'orderlist',
     firebase: {
-        orders: orderRef
+        orders: orderRef.orderByChild('created_at')
     },
     methods: {
         updateStatus: function(order, newStatus){
             orderRef.child(order['.key']).child('status').set(newStatus);
+        },
+        //Firebase ne renvoie pas les commandes par ordre croissante de date
+        reverse: function(orders){
+            return orders.slice().reverse();
+        }
+    },
+    filters: {
+        moment: function(date){
+            return moment(date).locale('fr').fromNow();
         }
     }
 }
