@@ -30,6 +30,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
         'description' => $faker->text(50),
         'price' => $faker->numberBetween(50, 200),
         'isMenu' => false,
+        'type' => $faker->randomElement(["beverage", "sweet", "salty"]),
     ];
 });
 

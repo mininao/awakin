@@ -19,6 +19,8 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('price')->unsigned();
             $table->boolean('isMenu');
+            $table->string('type');
+            // Should be "beverage", "sweet", "salty"
             $table->timestamps();
         });
     }
