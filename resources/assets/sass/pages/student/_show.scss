@@ -1,0 +1,36 @@
+section.order-show {
+  .status-icon {
+    display: inline-block;
+    padding: 1em;
+    color: $brand-white;
+    border-radius: 9999px;
+
+    i {
+      margin-right: 5px;
+    }
+
+    &--received {
+      background-color: $color-lightBlue;
+
+      &--inactive {
+        background-color: lighten($color-lightBlue, 15%);
+      }
+    }
+
+    &--in-progress {
+      background-color: $color-lightPink;
+
+      &--inactive {
+        background-color: lighten($color-lightPink, 15%);
+      }
+    }
+
+    &--delivered {
+      background-color: $coolors1-4;
+
+      &--inactive {
+        background-color: lighten($coolors1-4, 20%);
+      }
+    }
+  }
+}
