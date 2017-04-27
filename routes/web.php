@@ -33,13 +33,11 @@ Route::get('/student/orders/products', 'student\OrderController@listProducts');
 Route::get('/student/orders/{order}', 'student\OrderController@show');
 Route::post('/student/orders', 'student\OrderController@store');
 
-// Administrateur routes
-
-Route::get('/administrateur/product', 'administrateur\ProductController@index')->name('indexDashboardElior');
-Route::get('/administrateur/product/create', 'administrateur\ProductController@create')->name('createProduct');
-Route::post('/administrateur/product', 'administrateur\ProductController@store');
-Route::delete('/administrateur/product/{product}/delete', 'administrateur\ProductController@destroy')->name('deleteProduct');
-Route::get('/administrateur/product/{product}/edit', 'administrateur\ProductController@edit')->name('editProduct');
-Route::put('/administrateur/product/{product}/update', 'administrateur\ProductController@update')->name('updateProduct');
-
 Route::get('/administrateur/commands', 'administrateur\CommandsController@index');
+
+// Admin CRUD Interface Routes
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
+{
+  // Backpack\CRUD: Define the resources for the entities you want to CRUD.
+    CRUD::resource('product', 'Admin\ProductCrudController');
+});
