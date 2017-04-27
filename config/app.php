@@ -36,7 +36,7 @@ return [
     |
     */
 
-    'fairpay_key' => env('FAIRPAY_KEY', 'production'),
+    'fairpay_key' => env('FAIRPAY_KEY'),
 
     /*
     |--------------------------------------------------------------------------
