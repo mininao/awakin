@@ -44,3 +44,10 @@ Route::get('/administrateur/product/{product}/edit', 'administrateur\ProductCont
 Route::put('/administrateur/product/{product}/update', 'administrateur\ProductController@update')->name('updateProduct');
 
 Route::get('/administrateur/commands', 'administrateur\CommandsController@index');
+
+// Admin CRUD Interface Routes
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
+{
+  // Backpack\CRUD: Define the resources for the entities you want to CRUD.
+    CRUD::resource('product', 'Admin\ProductCrudController');
+});
