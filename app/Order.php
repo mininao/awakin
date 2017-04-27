@@ -21,4 +21,13 @@ class Order extends Model
   {
     return $this->belongsToMany('App\Product', 'ordered_products')->withPivot('quantity');
   }
+  
+  public function price()
+  {
+    $price = 0;
+    foreach ($this->products as $product) {
+      $price += $product->price * $product->pivot->quantity;
+    }
+    return $price;
+  }
 }
