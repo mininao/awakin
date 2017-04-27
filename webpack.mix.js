@@ -19,4 +19,4 @@ const { mix } = require('laravel-mix');
     .scripts([
         'node_modules/slideout/dist/slideout.min.js'
     ], 'public/js/vendor.js')
-    .copy('node_modules/ionicons/dist/fonts/', 'public/fonts/');;
+    .copy('node_modules/ionicons/dist/fonts/', 'public/fonts/');

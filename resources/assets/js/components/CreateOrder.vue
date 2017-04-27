@@ -2,8 +2,8 @@
   <div class="col-md-8 col-lg-6">
     <h1>Créer une commande</h1>
     <ul class="nav nav-pills justify-content-around">
-        <li role="presentation" class="nav-item active">
-            <a href="#boisson"><i class="ion-ios-cafe"></i></a>
+        <li role="presentation" class="nav-item">
+            <a href="#boisson" class="active"><i class="ion-ios-cafe"></i></a>
         </li>
         <li role="presentation" class="nav-item">
             <a href="#sucrerie"><i class="ion-ios-ice-cream"></i></a>

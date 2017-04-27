@@ -2,7 +2,7 @@ section.createOrder {
     .nav {
       margin: 10px 0;
 
-      .active {
+      a.active {
         position: relative;
 
         &::after {
@@ -12,8 +12,8 @@ section.createOrder {
           border-radius: 50%;
           background-color: $color-lightPink;
           position: absolute;
-          right: 45%;
-          bottom: 0;
+          right: 46%;
+          bottom: -7px;
         }
       }
 
