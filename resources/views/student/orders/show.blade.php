@@ -4,7 +4,6 @@
         <div class="col-md-6">
             <h1>Commande #{{ $order->order_id }}</h1>
             <p>Statut : {{ $order->status }}</p>
-
             <table class="table product-table">
                 <thead class="order-tab__head justify-content-around">
                     <tr>
@@ -23,7 +22,9 @@
                     @endforeach
                 </tbody>
             </table>
-
+            <div class="order-total text-center">
+                total = {{ $order->price()/100 }} euros
+            </div>
             <div class="row justify-content-around text-center order-status">
                 <div class="status-icon status-icon--received status-icon--received--inactive">
                     <i class="ion-ios-checkmark-circle-outline"></i> Reçue

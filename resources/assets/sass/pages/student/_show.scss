@@ -45,4 +45,13 @@ section.order-show {
       }
     }
   }
+
+  .order-total {
+    padding: 0.2em;
+    margin: 1em auto;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $coolors1-2;
+    font-size: 1.3em;
+  }
 }
