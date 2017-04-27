@@ -50,10 +50,12 @@ class OrderController extends Controller
         
         // Register the order in fairpay
         $fairpay = new FairPay(env('FAIRPAY_KEY'));
-        try {
-          $fairpay->cash($request->user()->fairpay_id, $price/100, "Commande Awakin #".$order_id);
-        } catch(ApiErrorException $e){
-          return response()->json($e, 402);
+        if(env('FAIRPAY_DEBIT_FOR_REAL')) { // Only if enabled in .env
+          try {
+            $fairpay->cash($request->user()->fairpay_id, $price/100, "Commande Awakin #".$order_id);
+          } catch(ApiErrorException $e){
+            return response()->json($e, 402);
+          }
         }
         
         // Create the order
