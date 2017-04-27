@@ -18,26 +18,17 @@
 
 <script>
 import VueFire from 'vuefire';
-import Firebase from 'firebase';
-
-let db = Firebase.initializeApp({
-    apiKey: "AIzaSyCf0N-I_sffDX3uJaNfVj0Or1qhTDzw6Cw",
-    authDomain: "awakin-162908.firebaseapp.com",
-    databaseURL: "https://awakin-162908.firebaseio.com",
-    projectId: "awakin-162908",
-    storageBucket: "awakin-162908.appspot.com",
-    messagingSenderId: "463458707052"
-}).database();
-var orderRef = db.ref('orders');
 Vue.use(VueFire);
 
+import firebaseModule from '../firebaseModule';
+let orderRef = firebaseModule.orderRef.ref('orders');
 export default {
   firebase: {
       orders: orderRef.orderByChild('created_at')
   },
   methods: {
       updateStatus: function(order, newStatus){
-          //orderRef.child(order['.key']).child('status').set(newStatus);
+        //   orderRef.child(order['.key']).child('status').set(newStatus);
       },
       //Firebase ne renvoie pas les commandes par ordre croissante de date
       reverse: function(orders){

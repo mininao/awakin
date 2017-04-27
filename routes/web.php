@@ -33,7 +33,6 @@ Route::get('/student/orders/products', 'student\OrderController@listProducts');
 Route::get('/student/orders/{order}', 'student\OrderController@show');
 Route::post('/student/orders', 'student\OrderController@store');
 
-
 // Administrateur routes
 
 Route::get('/administrateur/product', 'administrateur\ProductController@index')->name('indexDashboardElior');

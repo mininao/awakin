@@ -15,6 +15,7 @@ require('./bootstrap');
 
 Vue.component('admin-order-list', require('./components/AdminOrderList.vue'));
 Vue.component('create-order', require('./components/CreateOrder.vue'));
+Vue.component('get-status', require('./components/GetStatus.vue'));
 
 const app = new Vue({
     el: '#app'
