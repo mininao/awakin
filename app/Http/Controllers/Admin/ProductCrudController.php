@@ -31,7 +31,7 @@ class ProductCrudController extends CrudController {
       	]);
         $this->crud->addField([
       	'name' => 'price',
-        'label' => 'Prix'
+        'label' => 'Prix (centimes)'
       	]);
         $this->crud->addField([
       	'name' => 'foodType',
