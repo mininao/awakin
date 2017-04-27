@@ -70,11 +70,13 @@ class OrderController extends Controller
         
         // Create the order
         $order = new Order();
-        $order->status = "received";
+        $order->status = "processing";
         $order->user_id = $request->user()->id;
         $order->order_id = $order_id;
         $order->save();
         $order->products()->sync(request('orderedProducts'));
+        $order->status = "received";
+        $order->save();
         return response()->json($order, 201);
     }
 
