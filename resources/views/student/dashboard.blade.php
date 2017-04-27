@@ -10,11 +10,11 @@
             <div class="row">
                 <div class="col-12 smallOverview-titleBar">
                     <div>
-                        <h2>Maxence Aïci</h2>
+                        <h2>{{ Auth::user()->name}}</h2>
                         <p>Etudiant</p>
                     </div>
                     <p class="smallOverview-titleBar-credit">
-                        12.20 €
+                        {{Auth::user()->balance()}}
                     </p>
                 </div>
                 <div class="col-12">
