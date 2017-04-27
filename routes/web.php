@@ -29,6 +29,7 @@ Route::get('/callback', 'Auth\LoginController@callback');
 Route::get('/student', 'student\StudentController@dashboard');
 Route::get('/student/orders', 'student\OrderController@index');
 Route::get('/student/orders/create', 'student\OrderController@create');
+Route::get('/student/orders/products', 'student\OrderController@listProducts');
 Route::get('/student/orders/{order}', 'student\OrderController@show');
 Route::post('/student/orders', 'student\OrderController@store');
 

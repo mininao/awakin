@@ -19,8 +19,8 @@ class DefaultTestData extends Seeder
     {
 
         // And a bunch of fake google users
-        $this->command->info('Generating ten more users');
-        factory(User::class , 10)->create();
+        $this->command->info('Generating a few more users');
+        factory(User::class , 2)->create();
 
         // Create some products
         $this->command->info('Generating 10 Products');
