@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60)->nullable();
             $table->string('provider');
             $table->string('provider_id')->unique();
+            $table->integer('fairpay_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

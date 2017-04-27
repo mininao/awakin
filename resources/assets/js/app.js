@@ -8,7 +8,6 @@
 require('./bootstrap');
 
 import VueFire from 'vuefire';
-import OrderList from './components/OrderList.vue';
 
 Vue.use(VueFire);
 
@@ -19,9 +18,10 @@ Vue.use(VueFire);
  */
 
 Vue.component('orderlist', require('./components/OrderList.vue'));
+Vue.component('create-order', require('./components/CreateOrder.vue'));
 
-var orderlist = new Vue({
-    el: '#orderlist'
+const app = new Vue({
+    el: '#app'
 });
 
 var slideout = new Slideout({

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\student;
 
 use App\Order;
+use App\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -44,14 +45,8 @@ class OrderController extends Controller
         $order->user_id = $request->user()->id;
         $order->order_id = $request->user()->id.crc32(date("Yzis")).rand(0,999);
         $order->save();
-        
-        // Associate the products
-        $products = [];
-        foreach (request('product_ids') as $key => $product_id) {
-            $products[$product_id] = ['quantity' => request('product_qtys')[$key]];
-        }
-        $order->products()->sync($products);
-        return redirect('/student/orders');
+        $order->products()->sync(request('orderedProducts'));
+        return response()->json($order, 201);
     }
 
     /**
@@ -97,5 +92,15 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+    /**
+     * Display a listing of the available products.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function listProducts(Request $request)
+    {
+      $products = Product::all();
+      return response()->json($products, 201);
     }
 }

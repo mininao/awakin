@@ -1,32 +1,35 @@
 @extends('layouts.student')
 
 @section('student-content')
-<div class="container">
+<section class="container profile">
     <div class="takeOrderCTA">
-        
+
     </div>
-    <div class="row">
-        <div class="smallOverview smallOverview--profile">
-            <div class="smallOverview-titleBar">
-                <div>
-                    <h2>Maxence Aïci</h2>
-                    <p>Etudiant</p>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-12 smallOverview-titleBar">
+                    <div>
+                        <h2>Maxence Aïci</h2>
+                        <p>Etudiant</p>
+                    </div>
+                    <p class="smallOverview-titleBar-credit">
+                        12.20 €
+                    </p>
                 </div>
-                <p class="smallOverview-titleBar-credit">
-                    12.20 €
-                </p>
+                <div class="col-12">
+                    <h3>Solde</h3>
+                </div>
+                <div id="profileChart" class="col-12 smallOverview-chart">
+
+                </div>
             </div>
-            <h3>Solde</h3>
-            <div id="profileChart" class="smallOverview-chart">
-                
-            </div>
-            
         </div>
-        <div class="smallOverview smallOverview--orders">
-            <h2>historique</h2>
+        <div class="col-lg-4">
+            <h2>Historique</h2>
         </div>
     </div>
-</div>
+</section>
 <svg width="0" height="0">
   <defs>
     <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
