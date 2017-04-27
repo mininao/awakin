@@ -34,6 +34,16 @@
                     </div>
                 </div>
             </a>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <div class="sideNav-menu-item">
+                    <div class="sideNav-menu-item-icon">
+                        <i class="ion-ios-close-circle"></i>
+                    </div>
+                    <div class="div sideNav-menu-item-label">
+                        Déconnexion
+                    </div>
+                </div>
+            </a>
         </div>
     </nav>
     <main class="sideNav-content" id="sideNav-content">
@@ -52,4 +62,9 @@
         @yield('student-content')
     </main>
 </div>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  {{ csrf_field() }}
+</form>
+
 @endsection

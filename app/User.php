@@ -32,12 +32,12 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Order');
     }
-    
+
     public function balance()
     {
         $fairpay = new FairPay();
         $balance = $fairpay->api('/student/balance', 'get', array(
-            'api_key' => config('fairpay_key'),
+            'api_key' => env('FAIRPAY_KEY'),
             'client_id' => $this->fairpay_id
         ))->balance;
         return $balance;
