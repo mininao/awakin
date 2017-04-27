@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <orderlist></orderlist>
+    <admin-order-list></admin-order-list>
 @endsection
