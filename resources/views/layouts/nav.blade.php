@@ -14,7 +14,7 @@
           <a href="#">Comment ça marche ?</a>
         </div>
         <div class="topNav-link topNav-link--cta">
-          <a href="{{ route('login') }}">Connexion</a>
+          <a href="redirect">Connexion</a>
         </div>
       @else
 
