@@ -17,5 +17,23 @@
     "lodash": "^4.17.4",
     "slideout": "^1.0.1",
     "vue": "^2.1.10"
-  }
+  },
+  "name": "awakin",
+  "description": "PHP Course Project / Real-time food ordering service",
+  "version": "1.0.0",
+  "main": "npm run watch",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mininao/awakin.git"
+  },
+  "author": "Christophe Loeur, Maxime Ghermaoui, Vincent Salahkar, Adrien Mulatierri, Maxence Aici",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mininao/awakin/issues"
+  },
+  "homepage": "https://github.com/mininao/awakin#readme"
 }
