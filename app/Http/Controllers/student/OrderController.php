@@ -7,6 +7,8 @@ use App\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Ferus\FairPayApi\FairPay;
+use Ferus\FairPayApi\Exception\ApiErrorException;
 
 class OrderController extends Controller
 {
@@ -39,11 +41,26 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // Create the order        
+        // Create an order id and calculate total price
+        $order_id = $request->user()->id.crc32(date("Yzis")).rand(0,999);
+        $price = 0;
+        foreach (request('orderedProducts') as $product_id => $product) {
+            $price += Product::find($product_id)->price * $product['quantity'];  
+        }
+        
+        // Register the order in fairpay
+        $fairpay = new FairPay(env('FAIRPAY_KEY'));
+        try {
+          $fairpay->cash($request->user()->fairpay_id, $price/100, "Commande Awakin #".$order_id);
+        } catch(ApiErrorException $e){
+          return response()->json($e, 402);
+        }
+        
+        // Create the order
         $order = new Order();
         $order->status = "received";
         $order->user_id = $request->user()->id;
-        $order->order_id = $request->user()->id.crc32(date("Yzis")).rand(0,999);
+        $order->order_id = $order_id;
         $order->save();
         $order->products()->sync(request('orderedProducts'));
         return response()->json($order, 201);
