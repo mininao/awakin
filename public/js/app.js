@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -11230,7 +11230,7 @@ __webpack_require__(31);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('create-order', __webpack_require__(34));
+Vue.component('create-order', __webpack_require__(49));
 
 var app = new Vue({
   el: '#app'
@@ -11251,7 +11251,7 @@ window.slideout = slideout;
 /* 11 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n@import \"pages/student/orders\";\r\n^\r\n      File to import not found or unreadable: A:\\Documents\\websites\\awakin\\resources\\assets\\sass\\pages\\student\\_orders.scss.\nParent style sheet: stdin\r\n      in A:\\Documents\\websites\\awakin\\resources\\assets\\sass\\app.scss (line 14, column 1)\n    at runLoaders (A:\\Documents\\websites\\awakin\\node_modules\\webpack\\lib\\NormalModule.js:192:19)\n    at A:\\Documents\\websites\\awakin\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at A:\\Documents\\websites\\awakin\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (A:\\Documents\\websites\\awakin\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (A:\\Documents\\websites\\awakin\\node_modules\\sass-loader\\lib\\loader.js:51:13)\n    at Object.<anonymous> (A:\\Documents\\websites\\awakin\\node_modules\\sass-loader\\node_modules\\async\\dist\\async.js:2262:31)\n    at apply (A:\\Documents\\websites\\awakin\\node_modules\\sass-loader\\node_modules\\async\\dist\\async.js:20:25)\n    at Object.<anonymous> (A:\\Documents\\websites\\awakin\\node_modules\\sass-loader\\node_modules\\async\\dist\\async.js:56:12)\n    at Object.callback (A:\\Documents\\websites\\awakin\\node_modules\\sass-loader\\node_modules\\async\\dist\\async.js:944:16)\n    at options.error (A:\\Documents\\websites\\awakin\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ }),
 /* 12 */
@@ -12095,103 +12095,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 30 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    var _this = this;
-
-    axios.get("/student/orders/products").then(function (response) {
-      var products = response.data;
-      products = products.map(function (product) {
-        product.quantity = 0;
-        return product;
-      });
-      _this.products = products;
-      _this.loading = false;
-    }).catch(function (error) {
-      console.error(error);
-    });
-  },
-  data: function data() {
-    return {
-      loading: true,
-      products: []
-    };
-  },
-
-  computed: {
-    orderedProducts: function orderedProducts() {
-      var orderedProducts = {};
-      _.filter(this.products, 'quantity').map(function (product) {
-        return orderedProducts[product.id] = _.pick(product, 'quantity');
-      });
-
-      return orderedProducts;
-    }
-  },
-  methods: {
-    sendOrder: function sendOrder() {
-      console.log(this.orderedProducts);
-      axios.post('/student/orders', {
-        orderedProducts: this.orderedProducts
-      });
-    }
-  }
-});
-
-/***/ }),
+/* 30 */,
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29338,40 +29242,7 @@ window.axios.defaults.headers.common = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(38)(module)))
 
 /***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(35)(
-  /* script */
-  __webpack_require__(30),
-  /* template */
-  __webpack_require__(36),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/home/mininao/Ecole/E4/awakin/resources/assets/js/components/CreateOrder.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] CreateOrder.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f5662c2e", Component.options)
-  } else {
-    hotAPI.reload("data-v-f5662c2e", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 34 */,
 /* 35 */
 /***/ (function(module, exports) {
 
@@ -29425,130 +29296,13 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-8 col-lg-6"
-  }, [_c('h1', [_vm._v("Créer une commande")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "tab-content order-tab"
-  }, [_c('div', {
-    staticClass: "tab-pane active",
-    attrs: {
-      "id": "boisson",
-      "role": "tabpanel"
-    }
-  }, [_c('table', {
-    staticClass: "table product-table"
-  }, [_vm._m(1), _vm._v(" "), _c('tbody', _vm._l((_vm.products), function(product) {
-    return _c('tr', [_c('th', [_vm._v(_vm._s(product.title))]), _vm._v(" "), _c('td', {
-      staticClass: "text-center"
-    }, [_vm._v(_vm._s(product.price / 100 + " €"))]), _vm._v(" "), _c('td', {
-      staticClass: "text-center"
-    }, [_c('button', {
-      staticClass: "order-tab__quantity-button order-tab__quantity-button--active",
-      on: {
-        "click": function($event) {
-          product.quantity++
-        }
-      }
-    }, [_vm._v("+")]), _vm._v(" "), _c('button', {
-      staticClass: "order-tab__quantity-button order-tab__quantity-button--default",
-      on: {
-        "click": function($event) {
-          product.quantity && product.quantity--
-        }
-      }
-    }, [_vm._v("-")]), _vm._v(" "), _c('span', {
-      staticClass: "order-tab__quantity-number"
-    }, [_vm._v(_vm._s(product.quantity))])])])
-  }))])]), _vm._v(" "), _c('div', {
-    staticClass: "tab-pane",
-    attrs: {
-      "id": "sucrerie",
-      "role": "tabpanel"
-    }
-  }, [_vm._v("pane 2")]), _vm._v(" "), _c('div', {
-    staticClass: "tab-pane",
-    attrs: {
-      "id": "sale",
-      "role": "tabpanel"
-    }
-  }, [_vm._v("pane 3")])]), _vm._v(" "), _c('div', {
-    staticClass: "row justify-content-center"
-  }, [_c('input', {
-    attrs: {
-      "type": "submit",
-      "value": "Valider (montant total)"
-    },
-    on: {
-      "click": function($event) {
-        _vm.sendOrder()
-      }
-    }
-  })])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', {
-    staticClass: "nav nav-pills justify-content-around"
-  }, [_c('li', {
-    staticClass: "nav-item active",
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('a', {
-    attrs: {
-      "href": "#boisson"
-    }
-  }, [_c('i', {
-    staticClass: "ion-ios-cafe"
-  })])]), _vm._v(" "), _c('li', {
-    staticClass: "nav-item",
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('a', {
-    attrs: {
-      "href": "#sucrerie"
-    }
-  }, [_c('i', {
-    staticClass: "ion-ios-ice-cream"
-  })])]), _vm._v(" "), _c('li', {
-    staticClass: "nav-item",
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('a', {
-    attrs: {
-      "href": "#sale"
-    }
-  }, [_c('i', {
-    staticClass: "ion-ios-pizza"
-  })])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', {
-    staticClass: "order-tab__head justify-content-around"
-  }, [_c('tr', [_c('th', [_vm._v("Produit")]), _vm._v(" "), _c('th', {
-    staticClass: "text-center"
-  }, [_vm._v("Prix")]), _vm._v(" "), _c('th', {
-    staticClass: "text-center"
-  }, [_vm._v("Quantité")])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-f5662c2e", module.exports)
-  }
-}
-
-/***/ }),
+/* 36 */,
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process, global) {/*!
- * Vue.js v2.2.4
+ * Vue.js v2.2.6
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
@@ -30124,11 +29878,13 @@ if (process.env.NODE_ENV !== 'production') {
     if (vm.$root === vm) {
       return '<Root>'
     }
-    var name = typeof vm === 'function' && vm.options
-      ? vm.options.name
-      : vm._isVue
-        ? vm.$options.name || vm.$options._componentTag
-        : vm.name;
+    var name = typeof vm === 'string'
+      ? vm
+      : typeof vm === 'function' && vm.options
+        ? vm.options.name
+        : vm._isVue
+          ? vm.$options.name || vm.$options._componentTag
+          : vm.name;
 
     var file = vm._isVue && vm.$options.__file;
     if (!name && file) {
@@ -30423,7 +30179,7 @@ function defineReactive$$1 (
  * already exist.
  */
 function set (target, key, val) {
-  if (Array.isArray(target)) {
+  if (Array.isArray(target) && typeof key === 'number') {
     target.length = Math.max(target.length, key);
     target.splice(key, 1, val);
     return val
@@ -30432,7 +30188,7 @@ function set (target, key, val) {
     target[key] = val;
     return val
   }
-  var ob = target.__ob__;
+  var ob = (target ).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
     process.env.NODE_ENV !== 'production' && warn(
       'Avoid adding reactive properties to a Vue instance or its root $data ' +
@@ -30453,11 +30209,11 @@ function set (target, key, val) {
  * Delete a property and trigger change if necessary.
  */
 function del (target, key) {
-  if (Array.isArray(target)) {
+  if (Array.isArray(target) && typeof key === 'number') {
     target.splice(key, 1);
     return
   }
-  var ob = target.__ob__;
+  var ob = (target ).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
     process.env.NODE_ENV !== 'production' && warn(
       'Avoid deleting properties on a Vue instance or its root $data ' +
@@ -31458,6 +31214,18 @@ function eventsMixin (Vue) {
 
   Vue.prototype.$emit = function (event) {
     var vm = this;
+    if (process.env.NODE_ENV !== 'production') {
+      var lowerCaseEvent = event.toLowerCase();
+      if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
+        tip(
+          "Event \"" + lowerCaseEvent + "\" is emitted in component " +
+          (formatComponentName(vm)) + " but the handler is registered for \"" + event + "\". " +
+          "Note that HTML attributes are case-insensitive and you cannot use " +
+          "v-on to listen to camelCase events when using in-DOM templates. " +
+          "You should probably use \"" + (hyphenate(event)) + "\" instead of \"" + event + "\"."
+        );
+      }
+    }
     var cbs = vm._events[event];
     if (cbs) {
       cbs = cbs.length > 1 ? toArray(cbs) : cbs;
@@ -31626,6 +31394,9 @@ function lifecycleMixin (Vue) {
     }
     // call the last hook...
     vm._isDestroyed = true;
+    // invoke destroy hooks on current rendered tree
+    vm.__patch__(vm._vnode, null);
+    // fire destroyed hook
     callHook(vm, 'destroyed');
     // turn off all instance listeners.
     vm.$off();
@@ -31633,8 +31404,8 @@ function lifecycleMixin (Vue) {
     if (vm.$el) {
       vm.$el.__vue__ = null;
     }
-    // invoke destroy hooks on current rendered tree
-    vm.__patch__(vm._vnode, null);
+    // remove reference to DOM nodes (prevents leak)
+    vm.$options._parentElm = vm.$options._refElm = null;
   };
 }
 
@@ -31878,10 +31649,14 @@ function flushSchedulerQueue () {
     }
   }
 
+  // reset scheduler before updated hook called
+  var oldQueue = queue.slice();
+  resetSchedulerState();
+
   // call updated hooks
-  index = queue.length;
+  index = oldQueue.length;
   while (index--) {
-    watcher = queue[index];
+    watcher = oldQueue[index];
     vm = watcher.vm;
     if (vm._watcher === watcher && vm._isMounted) {
       callHook(vm, 'updated');
@@ -31893,8 +31668,6 @@ function flushSchedulerQueue () {
   if (devtools && config.devtools) {
     devtools.emit('flush');
   }
-
-  resetSchedulerState();
 }
 
 /**
@@ -32251,7 +32024,7 @@ function initProps (vm, propsOptions) {
 function initData (vm) {
   var data = vm.$options.data;
   data = vm._data = typeof data === 'function'
-    ? data.call(vm)
+    ? getData(data, vm)
     : data || {};
   if (!isPlainObject(data)) {
     data = {};
@@ -32280,6 +32053,15 @@ function initData (vm) {
   observe(data, true /* asRootData */);
 }
 
+function getData (data, vm) {
+  try {
+    return data.call(vm)
+  } catch (e) {
+    handleError(e, vm, "data()");
+    return {}
+  }
+}
+
 var computedWatcherOptions = { lazy: true };
 
 function initComputed (vm, computed) {
@@ -32288,6 +32070,15 @@ function initComputed (vm, computed) {
   for (var key in computed) {
     var userDef = computed[key];
     var getter = typeof userDef === 'function' ? userDef : userDef.get;
+    if (process.env.NODE_ENV !== 'production') {
+      if (getter === undefined) {
+        warn(
+          ("No getter function has been defined for computed property \"" + key + "\"."),
+          vm
+        );
+        getter = noop;
+      }
+    }
     // create internal watcher for the computed property.
     watchers[key] = new Watcher(vm, getter, noop, computedWatcherOptions);
 
@@ -32536,7 +32327,7 @@ function createComponent (
   }
 
   // extract props
-  var propsData = extractProps(data, Ctor);
+  var propsData = extractProps(data, Ctor, tag);
 
   // functional component
   if (Ctor.options.functional) {
@@ -32677,7 +32468,7 @@ function resolveAsyncComponent (
   }
 }
 
-function extractProps (data, Ctor) {
+function extractProps (data, Ctor, tag) {
   // we are only extracting raw values here.
   // validation and default values are handled in the child
   // component itself.
@@ -32698,12 +32489,13 @@ function extractProps (data, Ctor) {
           key !== keyInLowerCase &&
           attrs && attrs.hasOwnProperty(keyInLowerCase)
         ) {
-          warn(
-            "Prop \"" + keyInLowerCase + "\" is not declared in component " +
-            (formatComponentName(Ctor)) + ". Note that HTML attributes are " +
-            "case-insensitive and camelCased props need to use their kebab-case " +
-            "equivalents when using in-DOM templates. You should probably use " +
-            "\"" + altKey + "\" instead of \"" + key + "\"."
+          tip(
+            "Prop \"" + keyInLowerCase + "\" is passed to component " +
+            (formatComponentName(tag || Ctor)) + ", but the declared prop name is" +
+            " \"" + key + "\". " +
+            "Note that HTML attributes are case-insensitive and camelCased " +
+            "props need to use their kebab-case equivalents when using in-DOM " +
+            "templates. You should probably use \"" + altKey + "\" instead of \"" + key + "\"."
           );
         }
       }
@@ -33189,18 +32981,32 @@ function initInjections (vm) {
         ? Reflect.ownKeys(inject)
         : Object.keys(inject);
 
-    for (var i = 0; i < keys.length; i++) {
+    var loop = function ( i ) {
       var key = keys[i];
       var provideKey = isArray ? key : inject[key];
       var source = vm;
       while (source) {
         if (source._provided && provideKey in source._provided) {
-          vm[key] = source._provided[provideKey];
+          /* istanbul ignore else */
+          if (process.env.NODE_ENV !== 'production') {
+            defineReactive$$1(vm, key, source._provided[provideKey], function () {
+              warn(
+                "Avoid mutating an injected value directly since the changes will be " +
+                "overwritten whenever the provided component re-renders. " +
+                "injection being mutated: \"" + key + "\"",
+                vm
+              );
+            });
+          } else {
+            defineReactive$$1(vm, key, source._provided[provideKey]);
+          }
           break
         }
         source = source.$parent;
       }
-    }
+    };
+
+    for (var i = 0; i < keys.length; i++) loop( i );
   }
 }
 
@@ -33210,14 +33016,18 @@ var uid = 0;
 
 function initMixin (Vue) {
   Vue.prototype._init = function (options) {
-    /* istanbul ignore if */
-    if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
-      mark('vue-perf-init');
-    }
-
     var vm = this;
     // a uid
     vm._uid = uid++;
+
+    var startTag, endTag;
+    /* istanbul ignore if */
+    if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
+      startTag = "vue-perf-init:" + (vm._uid);
+      endTag = "vue-perf-end:" + (vm._uid);
+      mark(startTag);
+    }
+
     // a flag to avoid this being observed
     vm._isVue = true;
     // merge options
@@ -33253,8 +33063,8 @@ function initMixin (Vue) {
     /* istanbul ignore if */
     if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
       vm._name = formatComponentName(vm, false);
-      mark('vue-perf-init-end');
-      measure(((vm._name) + " init"), 'vue-perf-init', 'vue-perf-init-end');
+      mark(endTag);
+      measure(((vm._name) + " init"), startTag, endTag);
     }
 
     if (vm.$options.el) {
@@ -33666,7 +33476,7 @@ Object.defineProperty(Vue$3.prototype, '$isServer', {
   get: isServerRendering
 });
 
-Vue$3.version = '2.2.4';
+Vue$3.version = '2.2.6';
 
 /*  */
 
@@ -34006,21 +33816,36 @@ var emptyNode = new VNode('', {}, []);
 
 var hooks = ['create', 'activate', 'update', 'remove', 'destroy'];
 
-function isUndef (s) {
-  return s == null
+function isUndef (v) {
+  return v === undefined || v === null
 }
 
-function isDef (s) {
-  return s != null
+function isDef (v) {
+  return v !== undefined && v !== null
 }
 
-function sameVnode (vnode1, vnode2) {
+function isTrue (v) {
+  return v === true
+}
+
+function sameVnode (a, b) {
   return (
-    vnode1.key === vnode2.key &&
-    vnode1.tag === vnode2.tag &&
-    vnode1.isComment === vnode2.isComment &&
-    !vnode1.data === !vnode2.data
+    a.key === b.key &&
+    a.tag === b.tag &&
+    a.isComment === b.isComment &&
+    isDef(a.data) === isDef(b.data) &&
+    sameInputType(a, b)
   )
+}
+
+// Some browsers do not support dynamically changing type for <input>
+// so they need to be treated as different nodes
+function sameInputType (a, b) {
+  if (a.tag !== 'input') { return true }
+  var i;
+  var typeA = isDef(i = a.data) && isDef(i = i.attrs) && i.type;
+  var typeB = isDef(i = b.data) && isDef(i = i.attrs) && i.type;
+  return typeA === typeB
 }
 
 function createKeyToOldIdx (children, beginIdx, endIdx) {
@@ -34043,7 +33868,9 @@ function createPatchFunction (backend) {
   for (i = 0; i < hooks.length; ++i) {
     cbs[hooks[i]] = [];
     for (j = 0; j < modules.length; ++j) {
-      if (modules[j][hooks[i]] !== undefined) { cbs[hooks[i]].push(modules[j][hooks[i]]); }
+      if (isDef(modules[j][hooks[i]])) {
+        cbs[hooks[i]].push(modules[j][hooks[i]]);
+      }
     }
   }
 
@@ -34064,7 +33891,7 @@ function createPatchFunction (backend) {
   function removeNode (el) {
     var parent = nodeOps.parentNode(el);
     // element may have already been removed due to v-html / v-text
-    if (parent) {
+    if (isDef(parent)) {
       nodeOps.removeChild(parent, el);
     }
   }
@@ -34115,7 +33942,7 @@ function createPatchFunction (backend) {
       if (process.env.NODE_ENV !== 'production' && data && data.pre) {
         inPre--;
       }
-    } else if (vnode.isComment) {
+    } else if (isTrue(vnode.isComment)) {
       vnode.elm = nodeOps.createComment(vnode.text);
       insert(parentElm, vnode.elm, refElm);
     } else {
@@ -34137,7 +33964,7 @@ function createPatchFunction (backend) {
       // in that case we can just return the element and be done.
       if (isDef(vnode.componentInstance)) {
         initComponent(vnode, insertedVnodeQueue);
-        if (isReactivated) {
+        if (isTrue(isReactivated)) {
           reactivateComponent(vnode, insertedVnodeQueue, parentElm, refElm);
         }
         return true
@@ -34146,7 +33973,7 @@ function createPatchFunction (backend) {
   }
 
   function initComponent (vnode, insertedVnodeQueue) {
-    if (vnode.data.pendingInsert) {
+    if (isDef(vnode.data.pendingInsert)) {
       insertedVnodeQueue.push.apply(insertedVnodeQueue, vnode.data.pendingInsert);
     }
     vnode.elm = vnode.componentInstance.$el;
@@ -34185,8 +34012,8 @@ function createPatchFunction (backend) {
   }
 
   function insert (parent, elm, ref) {
-    if (parent) {
-      if (ref) {
+    if (isDef(parent)) {
+      if (isDef(ref)) {
         nodeOps.insertBefore(parent, elm, ref);
       } else {
         nodeOps.appendChild(parent, elm);
@@ -34217,8 +34044,8 @@ function createPatchFunction (backend) {
     }
     i = vnode.data.hook; // Reuse variable
     if (isDef(i)) {
-      if (i.create) { i.create(emptyNode, vnode); }
-      if (i.insert) { insertedVnodeQueue.push(vnode); }
+      if (isDef(i.create)) { i.create(emptyNode, vnode); }
+      if (isDef(i.insert)) { insertedVnodeQueue.push(vnode); }
     }
   }
 
@@ -34277,15 +34104,15 @@ function createPatchFunction (backend) {
   }
 
   function removeAndInvokeRemoveHook (vnode, rm) {
-    if (rm || isDef(vnode.data)) {
+    if (isDef(rm) || isDef(vnode.data)) {
       var listeners = cbs.remove.length + 1;
-      if (!rm) {
-        // directly removing
-        rm = createRmCb(vnode.elm, listeners);
-      } else {
+      if (isDef(rm)) {
         // we have a recursively passed down rm callback
         // increase the listeners count
         rm.listeners += listeners;
+      } else {
+        // directly removing
+        rm = createRmCb(vnode.elm, listeners);
       }
       // recursively invoke hooks on child component root node
       if (isDef(i = vnode.componentInstance) && isDef(i = i._vnode) && isDef(i.data)) {
@@ -34387,24 +34214,23 @@ function createPatchFunction (backend) {
     // note we only do this if the vnode is cloned -
     // if the new node is not cloned it means the render functions have been
     // reset by the hot-reload-api and we need to do a proper re-render.
-    if (vnode.isStatic &&
-        oldVnode.isStatic &&
+    if (isTrue(vnode.isStatic) &&
+        isTrue(oldVnode.isStatic) &&
         vnode.key === oldVnode.key &&
-        (vnode.isCloned || vnode.isOnce)) {
+        (isTrue(vnode.isCloned) || isTrue(vnode.isOnce))) {
       vnode.elm = oldVnode.elm;
       vnode.componentInstance = oldVnode.componentInstance;
       return
     }
     var i;
     var data = vnode.data;
-    var hasData = isDef(data);
-    if (hasData && isDef(i = data.hook) && isDef(i = i.prepatch)) {
+    if (isDef(data) && isDef(i = data.hook) && isDef(i = i.prepatch)) {
       i(oldVnode, vnode);
     }
     var elm = vnode.elm = oldVnode.elm;
     var oldCh = oldVnode.children;
     var ch = vnode.children;
-    if (hasData && isPatchable(vnode)) {
+    if (isDef(data) && isPatchable(vnode)) {
       for (i = 0; i < cbs.update.length; ++i) { cbs.update[i](oldVnode, vnode); }
       if (isDef(i = data.hook) && isDef(i = i.update)) { i(oldVnode, vnode); }
     }
@@ -34422,7 +34248,7 @@ function createPatchFunction (backend) {
     } else if (oldVnode.text !== vnode.text) {
       nodeOps.setTextContent(elm, vnode.text);
     }
-    if (hasData) {
+    if (isDef(data)) {
       if (isDef(i = data.hook) && isDef(i = i.postpatch)) { i(oldVnode, vnode); }
     }
   }
@@ -34430,7 +34256,7 @@ function createPatchFunction (backend) {
   function invokeInsertHook (vnode, queue, initial) {
     // delay insert hooks for component root nodes, invoke them after the
     // element is really inserted
-    if (initial && vnode.parent) {
+    if (isTrue(initial) && isDef(vnode.parent)) {
       vnode.parent.data.pendingInsert = queue;
     } else {
       for (var i = 0; i < queue.length; ++i) {
@@ -34507,7 +34333,7 @@ function createPatchFunction (backend) {
   }
 
   function assertNodeMatch (node, vnode) {
-    if (vnode.tag) {
+    if (isDef(vnode.tag)) {
       return (
         vnode.tag.indexOf('vue-component') === 0 ||
         vnode.tag.toLowerCase() === (node.tagName && node.tagName.toLowerCase())
@@ -34518,15 +34344,15 @@ function createPatchFunction (backend) {
   }
 
   return function patch (oldVnode, vnode, hydrating, removeOnly, parentElm, refElm) {
-    if (!vnode) {
-      if (oldVnode) { invokeDestroyHook(oldVnode); }
+    if (isUndef(vnode)) {
+      if (isDef(oldVnode)) { invokeDestroyHook(oldVnode); }
       return
     }
 
     var isInitialPatch = false;
     var insertedVnodeQueue = [];
 
-    if (!oldVnode) {
+    if (isUndef(oldVnode)) {
       // empty mount (likely as component), create new root element
       isInitialPatch = true;
       createElm(vnode, insertedVnodeQueue, parentElm, refElm);
@@ -34544,7 +34370,7 @@ function createPatchFunction (backend) {
             oldVnode.removeAttribute('server-rendered');
             hydrating = true;
           }
-          if (hydrating) {
+          if (isTrue(hydrating)) {
             if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
               invokeInsertHook(vnode, insertedVnodeQueue, true);
               return oldVnode
@@ -34575,7 +34401,7 @@ function createPatchFunction (backend) {
           nodeOps.nextSibling(oldElm)
         );
 
-        if (vnode.parent) {
+        if (isDef(vnode.parent)) {
           // component root element replaced.
           // update parent placeholder node element, recursively
           var ancestor = vnode.parent;
@@ -34590,7 +34416,7 @@ function createPatchFunction (backend) {
           }
         }
 
-        if (parentElm$1 !== null) {
+        if (isDef(parentElm$1)) {
           removeVnodes(parentElm$1, [oldVnode], 0, 0);
         } else if (isDef(oldVnode.tag)) {
           invokeDestroyHook(oldVnode);
@@ -36196,7 +36022,7 @@ var model$1 = {
       if (isIE || isEdge) {
         setTimeout(cb, 0);
       }
-    } else if (vnode.tag === 'textarea' || el.type === 'text') {
+    } else if (vnode.tag === 'textarea' || el.type === 'text' || el.type === 'password') {
       el._vModifiers = binding.modifiers;
       if (!binding.modifiers.lazy) {
         if (!isAndroid) {
@@ -36866,6 +36692,7 @@ function parseHTML (html, options) {
   var stack = [];
   var expectHTML = options.expectHTML;
   var isUnaryTag$$1 = options.isUnaryTag || no;
+  var canBeLeftOpenTag$$1 = options.canBeLeftOpenTag || no;
   var index = 0;
   var last, lastTag;
   while (html) {
@@ -37014,7 +36841,7 @@ function parseHTML (html, options) {
       if (lastTag === 'p' && isNonPhrasingTag(tagName)) {
         parseEndTag(lastTag);
       }
-      if (canBeLeftOpenTag(tagName) && lastTag === tagName) {
+      if (canBeLeftOpenTag$$1(tagName) && lastTag === tagName) {
         parseEndTag(tagName);
       }
     }
@@ -37212,6 +37039,7 @@ function parse (
     warn: warn$2,
     expectHTML: options.expectHTML,
     isUnaryTag: options.isUnaryTag,
+    canBeLeftOpenTag: options.canBeLeftOpenTag,
     shouldDecodeNewlines: options.shouldDecodeNewlines,
     start: function start (tag, attrs, unary) {
       // check namespace.
@@ -38693,6 +38521,7 @@ var baseOptions = {
   isPreTag: isPreTag,
   isUnaryTag: isUnaryTag,
   mustUseProp: mustUseProp,
+  canBeLeftOpenTag: canBeLeftOpenTag,
   isReservedTag: isReservedTag,
   getTagNamespace: getTagNamespace,
   staticKeys: genStaticKeys(modules$1)
@@ -38830,6 +38659,264 @@ module.exports = function(module) {
 __webpack_require__(10);
 module.exports = __webpack_require__(11);
 
+
+/***/ }),
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/student/orders/products").then(function (response) {
+      var products = response.data;
+      products = products.map(function (product) {
+        product.quantity = 0;
+        return product;
+      });
+      _this.products = products;
+      _this.loading = false;
+    }).catch(function (error) {
+      console.error(error);
+    });
+  },
+  data: function data() {
+    return {
+      loading: true,
+      products: []
+    };
+  },
+
+  computed: {
+    orderedProducts: function orderedProducts() {
+      var orderedProducts = {};
+      _.filter(this.products, 'quantity').map(function (product) {
+        return orderedProducts[product.id] = _.pick(product, 'quantity');
+      });
+
+      return orderedProducts;
+    }
+  },
+  methods: {
+    sendOrder: function sendOrder() {
+      console.log(this.orderedProducts);
+      axios.post('/student/orders', {
+        orderedProducts: this.orderedProducts
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(35)(
+  /* script */
+  __webpack_require__(48),
+  /* template */
+  __webpack_require__(50),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "A:\\Documents\\websites\\awakin\\resources\\assets\\js\\components\\CreateOrder.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] CreateOrder.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f5662c2e", Component.options)
+  } else {
+    hotAPI.reload("data-v-f5662c2e", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-8 col-lg-6"
+  }, [_c('h1', [_vm._v("Créer une commande")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "tab-content order-tab"
+  }, [_c('div', {
+    staticClass: "tab-pane active",
+    attrs: {
+      "id": "boisson",
+      "role": "tabpanel"
+    }
+  }, [_c('table', {
+    staticClass: "table product-table"
+  }, [_vm._m(1), _vm._v(" "), _c('tbody', _vm._l((_vm.products), function(product) {
+    return _c('tr', [_c('th', [_vm._v(_vm._s(product.title))]), _vm._v(" "), _c('td', {
+      staticClass: "text-center"
+    }, [_vm._v(_vm._s(product.price / 100 + " €"))]), _vm._v(" "), _c('td', {
+      staticClass: "text-center"
+    }, [_c('button', {
+      staticClass: "order-tab__quantity-button order-tab__quantity-button--active",
+      on: {
+        "click": function($event) {
+          product.quantity++
+        }
+      }
+    }, [_vm._v("+")]), _vm._v(" "), _c('button', {
+      staticClass: "order-tab__quantity-button order-tab__quantity-button--default",
+      on: {
+        "click": function($event) {
+          product.quantity && product.quantity--
+        }
+      }
+    }, [_vm._v("-")]), _vm._v(" "), _c('span', {
+      staticClass: "order-tab__quantity-number"
+    }, [_vm._v(_vm._s(product.quantity))])])])
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "tab-pane",
+    attrs: {
+      "id": "sucrerie",
+      "role": "tabpanel"
+    }
+  }, [_vm._v("pane 2")]), _vm._v(" "), _c('div', {
+    staticClass: "tab-pane",
+    attrs: {
+      "id": "sale",
+      "role": "tabpanel"
+    }
+  }, [_vm._v("pane 3")])]), _vm._v(" "), _c('div', {
+    staticClass: "row justify-content-center"
+  }, [_c('input', {
+    attrs: {
+      "type": "submit",
+      "value": "Valider (montant total)"
+    },
+    on: {
+      "click": function($event) {
+        _vm.sendOrder()
+      }
+    }
+  })])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ul', {
+    staticClass: "nav nav-pills justify-content-around"
+  }, [_c('li', {
+    staticClass: "nav-item",
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('a', {
+    staticClass: "active",
+    attrs: {
+      "href": "#boisson"
+    }
+  }, [_c('i', {
+    staticClass: "ion-ios-cafe"
+  })])]), _vm._v(" "), _c('li', {
+    staticClass: "nav-item",
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('a', {
+    attrs: {
+      "href": "#sucrerie"
+    }
+  }, [_c('i', {
+    staticClass: "ion-ios-ice-cream"
+  })])]), _vm._v(" "), _c('li', {
+    staticClass: "nav-item",
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('a', {
+    attrs: {
+      "href": "#sale"
+    }
+  }, [_c('i', {
+    staticClass: "ion-ios-pizza"
+  })])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "order-tab__head justify-content-around"
+  }, [_c('tr', [_c('th', [_vm._v("Produit")]), _vm._v(" "), _c('th', {
+    staticClass: "text-center"
+  }, [_vm._v("Prix")]), _vm._v(" "), _c('th', {
+    staticClass: "text-center"
+  }, [_vm._v("Quantité")])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-f5662c2e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

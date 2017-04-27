@@ -1,24 +1,18 @@
 // Variables
 @import "variables";
 @import "bootstrap";
-@import "node_modules/ionicons/dist/scss/ionicons";
-
-// Helpers
-
+@import "node_modules/ionicons/dist/scss/ionicons"; // Helpers
 // Components
 @import "components/brand";
 @import "components/sideNav";
 @import "components/titleBar";
-@import "components/button";
-
-// Layouts
-@import "layouts/nav";
-
-// Pages
+@import "components/button"; // Layouts
+@import "layouts/nav"; // Pages
 @import "pages/welcome";
 @import "pages/auth";
 @import "pages/student/student";
-@import "pages/student/createOrder";
+@import "pages/student/orders";
+@import "pages/student/show";
 @import "pages/student/index";
 
 body {
