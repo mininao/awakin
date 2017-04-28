@@ -3,13 +3,13 @@
     <h1>Créer une commande</h1>
     <ul class="nav nav-pills justify-content-around">
         <li role="presentation" class="nav-item">
-            <a href="#boisson" class="active"><i class="ion-ios-cafe"></i></a>
+            <a href="#" v-on:click="filter = (filter=='beverage') ? false:'beverage'" v-bind:class="[{ 'active': filter == 'beverage' }]"><i class="ion-ios-cafe"></i></a>
         </li>
         <li role="presentation" class="nav-item">
-            <a href="#sucrerie"><i class="ion-ios-ice-cream"></i></a>
+            <a href="#" v-on:click="filter = (filter=='sweet') ? false:'sweet'" v-bind:class="[{ 'active': filter == 'sweet' }]"><i class="ion-ios-ice-cream"></i></a>
         </li>
         <li role="presentation" class="nav-item">
-            <a href="#sale"><i class="ion-ios-pizza"></i></a>
+            <a href="#" v-on:click="filter = (filter=='salty') ? false:'salty'" v-bind:class="[{ 'active': filter == 'salty' }]"><i class="ion-ios-pizza"></i></a>
         </li>
     </ul>
     
@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="product in products">
+                    <tr v-for="product in products" v-if="product.foodType == filter || !filter">
                         <th>{{product.title}}</th>
                         <td class="text-center">{{product.price/100 + " €"}}</td>
                         <td class="text-center">
@@ -67,7 +67,8 @@
             loading: true,
             products: [],
             ordering:false,
-            error:false
+            error:false,
+            filter:null
           }
         },
         computed: {
