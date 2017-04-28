@@ -12,15 +12,16 @@
                     <a href="/student/orders/{{$order->id}}">
                         <h2 class="item__number">Commande #{{ $order->order_id }}</h2>
                     </a>
-                    <h3 class="item__status">Status : {{ $order->status }}</h3>
-                    <h3 class="item__products">Produits :</h3>
+                    <h3 class="item__status">{{$order->created_at->diffForHumans()}}</h3>
                     <ul>
                         @foreach ($order->products as $product)
-                            <li>{{ $product->pivot->quantity }}x {{ $product->title }} à {{ $product->price/100 }} euros</li>
+                            <li>
+                                <div class="plus">+</div>
+                                {{ $product->pivot->quantity }} {{ $product->title }}, {{ $product->price/100 }}€
+                            </li>
                         @endforeach
 
                     </ul>
-                    <h3>Date : {{$order->created_at}}</h3>
                 </div>
                 <hr>
             @endforeach

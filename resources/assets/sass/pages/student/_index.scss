@@ -18,5 +18,22 @@ section.order-list {
         font-size: 0.6em;
       }
     }
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        .plus {
+          margin-left: 2.5rem;
+          font-size: 1.1rem;
+        }
+        &:nth-child(1) {
+          .plus {
+            display: none
+          }
+        }
+      }
+    }
   }
 }
