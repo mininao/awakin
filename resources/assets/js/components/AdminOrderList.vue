@@ -3,7 +3,7 @@
         <h1>Dashboard Préparation Cafet</h1>
         <div class="orderList-grid">
           <div class="orderList-order" v-for="order in orders" v-if="order.status != 'finished'">
-              <h1>#{{order['.key']}} - {{ order.created_at | moment }}</h1>
+              <h1>#{{order.order_id}} - {{ order.created_at | moment }}</h1>
               <div class="orderList-products">
                 <div class="orderList-product" v-for="product in order.products">
                     {{product.title}}

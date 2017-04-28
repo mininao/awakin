@@ -15,7 +15,7 @@ section.order-show {
       letter-spacing: .1rem;
       border-radius: 9999px;
       min-width: 15rem;
-      margin-bottom: 2rem;
+      margin: .75rem 1rem;
       line-height: 2em;
       i {
         font-size: 2.15em;
@@ -26,10 +26,6 @@ section.order-show {
         line-height: 2em;
         margin: 0;
         text-align: center;
-      }
-      @include media-breakpoint-down(lg) {
-        margin-top: 1em;
-        min-width: 12em;
       }
       &.status-icon--inactive {
         i {
