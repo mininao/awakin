@@ -2,31 +2,46 @@
 
 @section('student-content')
 <section class="container profile">
-    <div class="takeOrderCTA">
-
+    <div class="dashboard-welcome">
+        <h2>Bienvenue {{ explode(" ",Auth::user()->name)[0]}} !</h2>
+        <p>Etudiant</p>
     </div>
     <div class="row justify-content-center">
-        <div class="col-lg-8">
+        <div class="col-lg-6">
             <div class="row">
                 <div class="col-12 smallOverview-titleBar">
-                    <div>
-                        <h2>{{ Auth::user()->name}}</h2>
-                        <p>Etudiant</p>
-                    </div>
                     <p class="smallOverview-titleBar-credit">
-                        {{Auth::user()->balance()}}
+                        Solde fairpay : <em>{{Auth::user()->balance()}}€</em> <br>
                     </p>
                 </div>
                 <div class="col-12">
-                    <h3>Solde</h3>
+                    <!-- <h3>Solde</h3> -->
                 </div>
                 <div id="profileChart" class="col-12 smallOverview-chart">
 
                 </div>
+                <div class="goFP">
+                    <a href="https://bde.esiee.fr/fairpay/" target="_blank" class="btn btn-success">Accéder à fairpay</a>
+                </div>
+                
+                
             </div>
         </div>
-        <div class="col-lg-4">
-            <h2>Historique</h2>
+        <div class="col-lg-6">
+            <h2>Historique
+            </h2>
+            <div class="dashOrderList">
+                @foreach (Auth::user()->orders()->latest()->limit(10)->get() as $order)
+                    <div>
+                        <a href="/student/orders/{{ $order->id }}">Commande #{{ $order->order_id }}</a>
+                    </div>
+                
+                @endforeach
+                <div class="dashOrderList-suite">
+                    <a href="/student/orders/" target="_blank" class="btn btn-success">Voire la suite</a>
+                </div>
+                
+            </div>
         </div>
     </div>
 </section>
@@ -44,8 +59,8 @@
 <script src="{{ asset('js/plotly-latest.min.js') }}"></script>
 <script>
 var profileData = {
-  x: [1, 2, 3, 4],
-  y: [1, 7, 4, 12.2],
+  //x: [1, 2, 3, 4],
+  y: [1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,1.28,0.78,0.28,0.28,0.28,0.28,0.28,0.28,0.28,0.28,0.03,0.03],
   type: 'scatter',
   line: {shape: 'spline',smoothing:0.5},
   fill:"tonexty",
