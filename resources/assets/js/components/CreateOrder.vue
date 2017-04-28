@@ -39,8 +39,15 @@
         <div class="tab-pane" id="sucrerie" role="tabpanel">pane 2</div>
         <div class="tab-pane" id="sale" role="tabpanel">pane 3</div>
     </div>
+    <div class="alert alert-danger" role="alert" v-if="error">
+      <strong>Damned.</strong> {{error}}
+    </div>
     <div class="row justify-content-center">
-        <div v-if="price" class="submit" v-on:click="sendOrder()">Valider {{price/100 + " €"}}</div>
+        <div v-if="price" class="submit" v-on:click="sendOrder()">Valider {{price/100 + " €"}}
+          <svg v-if="ordering" class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+             <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+          </svg>
+        </div>
     </div>
     </div>
 </template>
@@ -90,7 +97,7 @@
         },
         methods: {
           sendOrder() {
-            console.log(this.orderedProducts)
+            this.ordering = true;
             axios.post('/student/orders', {
               orderedProducts:this.orderedProducts
             })
@@ -101,6 +108,8 @@
             })
             .catch((error)=>{
               console.error(error);
+              this.error = "Votre solde fairpay est insuffisant";
+              this.ordering = false;
             });
           }
         }
