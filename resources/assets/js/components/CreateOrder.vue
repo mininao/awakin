@@ -40,7 +40,7 @@
         <div class="tab-pane" id="sale" role="tabpanel">pane 3</div>
     </div>
     <div class="row justify-content-center">
-        <input v-on:click="sendOrder()" type="submit" value="Valider (montant total)">
+        <div v-if="price" class="submit" v-on:click="sendOrder()">Valider {{price/100 + " €"}}</div>
     </div>
     </div>
 </template>
@@ -65,7 +65,9 @@
         data() {
           return {
             loading: true,
-            products: []
+            products: [],
+            ordering:false,
+            error:false
           }
         },
         computed: {
@@ -76,6 +78,13 @@
             
             
             return orderedProducts;
+          },
+          price() {
+            let price = 0;
+            _.each(this.products,function(product){
+              price += product.price*product.quantity
+            });
+            return price; 
           }
         },
         methods: {
@@ -84,6 +93,14 @@
             axios.post('/student/orders', {
               orderedProducts:this.orderedProducts
             })
+            .then((response)=>{
+              if(response.status == 201) {
+                window.location = "/student/orders/"+response.data.id;
+              }
+            })
+            .catch((error)=>{
+              console.error(error);
+            });
           }
         }
     }

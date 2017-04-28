@@ -3,7 +3,6 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h1>Commande #{{ $order->order_id }}</h1>
-            <p>Statut : </p>
             <table class="table product-table">
                 <thead class="order-tab__head justify-content-around">
                     <tr>
