@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="welcome-hero__cta row text-center">
-            <a href="/login" class="">Commandez !</a>
+            <a href="/redirect" class="">Commandez !</a>
         </div>
         <!-- <h1>Le <em>Réveil</em> des étudiants.</h1> -->
     </div>
