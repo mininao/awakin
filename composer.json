@@ -11,7 +11,8 @@
         "ferus/fairpay-php-sdk": "dev-master",
         "laravel/framework": "5.4.*",
         "laravel/socialite": "^3.0",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "mpociot/laravel-firebase-sync": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
