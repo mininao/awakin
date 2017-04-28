@@ -11,7 +11,7 @@ class ProductCrudController extends CrudController {
 	public function setup() {
         $this->crud->setModel("App\Product");
         $this->crud->setRoute("admin/product");
-        $this->crud->setEntityNameStrings('product', 'products');
+        $this->crud->setEntityNameStrings('produit', 'produits');
 
         $this->crud->addColumn([
       	'name' => 'title',
