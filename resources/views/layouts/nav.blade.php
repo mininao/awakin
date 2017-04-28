@@ -1,6 +1,6 @@
 <div class="container-fluid topNav {{ isset($onTop) ? 'topNav--onTop' : '' }}">
   <div class="row">
-    <div class="topNav-brand">
+    <div class="topNav-brand brand">
       <a href="{{ url('/') }}">
           awakin
       </a>
@@ -14,7 +14,7 @@
           <a href="#">Comment ça marche ?</a>
         </div>
         <div class="topNav-link topNav-link--cta">
-          <a href="{{ route('login') }}">Connexion</a>
+          <a href="redirect">Connexion</a>
         </div>
       @else
 

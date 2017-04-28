@@ -9,7 +9,7 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 
-require('bootstrap');
+//require('bootstrap');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -18,6 +18,8 @@ require('bootstrap');
  */
 
 window.Vue = require('vue');
+
+window.moment = require('moment');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

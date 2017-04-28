@@ -1,26 +1,87 @@
 .welcome {
-  background-image: $gradient-home;
+  // background-image: $brand-white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
   .welcome-hero {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #fff;
+    align-content: center;
+
     h1 {
       text-align: center;
+
+      img {
+        height: 25vh;
+      }
+
       em {
         font-style: normal;
-        transition: font-size .3s;
+        transition: font-size 0.3s;
       }
+
       &.welcome-hero-brand {
-        font-size: 5em;
-        margin: .75em auto;
+        font-size: 7em;
+        margin: 1.2em auto 0.8em;
       }
-      &:hover em, &:hover + h1 em{
+
+      &:hover + h1 em,
+      &:hover em {
         font-size: 2em;
+      }
+    }
+
+    .presentation-sm {
+      margin: 0 auto;
+
+      .presentation-step {
+        margin: 2em auto;
+        padding: 2em;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        text-align: center;
+
+        &:hover {
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        img {
+          width: 100%;
+        }
+
+        .line-separation {
+          height: 0.2em;
+          width: 3em;
+          margin: 2.5em auto 0;
+          background-color: $color-lightPink;
+        }
+
+        &__description {
+          color: $color-brand;
+          text-align: center;
+          text-transform: uppercase;
+          margin-top: 1em;
+          font-weight: bolder;
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    &__cta {
+      background-image: $gradient-home;
+      margin: 5em auto;
+      padding: 1em 2em;
+      text-transform: uppercase;
+      border-radius: 50px;
+
+      a {
+        color: $brand-white;
+        font-size: 2em;
+        font-weight: 500;
       }
     }
   }

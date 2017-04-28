@@ -26,6 +26,17 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Fairpay API Key
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the Fairpay API KEY used
+    |
+    */
+
+    'fairpay_key' => env('FAIRPAY_KEY'),
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +188,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Backpack\Base\BaseServiceProvider::class,
+        Backpack\CRUD\CrudServiceProvider::class,
     ],
 
     /*
@@ -226,6 +240,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        
     ],
 
 ];

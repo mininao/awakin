@@ -16,9 +16,11 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->default("");
             $table->integer('price')->unsigned();
-            $table->boolean('isMenu');
+            $table->boolean('isMenu')->default(false);
+            $table->string('foodType');
+            // Should be "beverage", "sweet", "salty"
             $table->timestamps();
         });
     }

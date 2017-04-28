@@ -1,0 +1,49 @@
+// General Student Template
+
+// Student Dashboard
+.dashboard-welcome {
+  padding-top: 2rem;
+  h2 {
+    text-align: center;
+    margin: .5rem 2rem;
+  }
+  p {
+    text-align: center;
+    color: $brand-success;
+    text-transform: uppercase;
+    font-size: 1em;
+  }
+}
+.smallOverview-titleBar-credit {
+  font-size: 2em;
+  em {
+  color: $brand-success;
+  font-style: normal;
+  font-weight: 700;
+  }
+}
+.goFP {
+  margin-top: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.js-fill.js-tozero {
+  fill: url("#linear") !important;
+  fill-opacity: 1 !important;
+}
+.dashOrderList {
+  .dashOrderList-suite {
+    margin-top: 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  } 
+}
+.container.profile {
+  .row>div {
+    margin-bottom: 2rem;
+  }
+}

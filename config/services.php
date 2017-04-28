@@ -35,4 +35,17 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+        'client_id'     => env('GOOGLE_ID'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT')
+    ],
+    'firebase' => [
+      'api_key' => 'AIzaSyCf0N-I_sffDX3uJaNfVj0Or1qhTDzw6Cw', // Only used for JS integration
+      'auth_domain' => 'awakin-162908.firebaseapp.com', // Only used for JS integration
+      'database_url' => 'https://awakin-162908.firebaseio.com',
+      'secret' => 'OapA8rvGStwbiTeNP6IGDVDGsW91rys9pwTur0D7',
+      'storage_bucket' => 'awakin-162908.appspot.com', // Only used for JS integration
+    ]
+
 ];

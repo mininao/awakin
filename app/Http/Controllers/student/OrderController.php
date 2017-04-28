@@ -3,12 +3,25 @@
 namespace App\Http\Controllers\student;
 
 use App\Order;
+use App\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Ferus\FairPayApi\FairPay;
+use Ferus\FairPayApi\Exception\ApiErrorException;
 
 class OrderController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -38,20 +51,33 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // Create the order        
-        $order = new Order();
-        $order->status = "received";
-        $order->user_id = $request->user()->id;
-        $order->order_id = $request->user()->id.crc32(date("Yzis")).rand(0,999);
-        $order->save();
-        
-        // Associate the products
-        $products = [];
-        foreach (request('product_ids') as $key => $product_id) {
-            $products[$product_id] = ['quantity' => request('product_qtys')[$key]];
+        // Create an order id and calculate total price
+        $order_id = $request->user()->id.crc32(date("Yzis")).rand(0,999);
+        $price = 0;
+        foreach (request('orderedProducts') as $product_id => $product) {
+            $price += Product::find($product_id)->price * $product['quantity'];  
         }
-        $order->products()->sync($products);
-        return redirect('/student/orders');
+        
+        // Register the order in fairpay
+        $fairpay = new FairPay(env('FAIRPAY_KEY'));
+        if(env('FAIRPAY_DEBIT_FOR_REAL')) { // Only if enabled in .env
+          try {
+            $fairpay->cash($request->user()->fairpay_id, $price/100, "Commande Awakin #".$order_id);
+          } catch(ApiErrorException $e){
+            return response()->json($e, 402);
+          }
+        }
+        
+        // Create the order
+        $order = new Order();
+        $order->status = "processing";
+        $order->user_id = $request->user()->id;
+        $order->order_id = $order_id;
+        $order->save();
+        $order->products()->sync(request('orderedProducts'));
+        $order->status = "received";
+        $order->save();
+        return response()->json($order, 201);
     }
 
     /**
@@ -97,5 +123,15 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+    /**
+     * Display a listing of the available products.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function listProducts(Request $request)
+    {
+      $products = Product::all();
+      return response()->json($products, 201);
     }
 }

@@ -18,7 +18,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'provider' => 'google',
+        'provider_id' => 'fake-'.$faker->unique()->uuid(),
         'remember_token' => str_random(10),
     ];
 });
@@ -29,6 +30,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
         'description' => $faker->text(50),
         'price' => $faker->numberBetween(50, 200),
         'isMenu' => false,
+        'foodType' => $faker->randomElement(["beverage", "sweet", "salty"]),
     ];
 });
 

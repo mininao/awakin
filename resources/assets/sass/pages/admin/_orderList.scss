@@ -1,0 +1,81 @@
+.orderList {
+  h1 {
+    text-align: center;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .orderList-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .orderList-order {
+      @include card(2);
+      margin: 1.66rem 1.33rem;
+      //padding: 1rem 1rem;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+      width: 25rem;
+      min-height: 15rem;
+      h1 {
+        color: lighten($brand-success,30%);
+        font-size: 1.33rem;
+        text-transform: uppercase;
+        padding: 1rem 1rem;
+      }
+      .orderList-products {
+        .orderList-product {
+          padding: 1rem 2rem;
+          border-top: 1px solid #aaa;
+          &:nth-child(1){
+            border-top: none;
+          }
+          .orderList-product-quantity {
+            font-weight: 700;
+            color: #777;
+          }
+        }
+      }
+      
+      .orderList-buttonsPlaceholder {
+        height: 4rem;
+        width: 0.05rem;
+      }
+      .orderList-buttons {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        button {
+          flex-grow: 1;
+          padding: 1rem;
+          display: block;
+          border:none;
+          background-color: red;
+          font-family: $headings-font-family;
+          font-weight: 700;
+          font-size: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          i {
+            font-size: 1.5rem;
+            margin: -1rem 1rem;
+          }
+          &:nth-child(1) {
+            background-color: lighten($colors3-yellow,30%);
+          }
+          &:nth-child(2) {
+            background-color: lighten($colors3-purple,10%);
+          }
+          &:nth-child(3) {
+            background-color: lighten($colors3-blue,30%);
+          }
+        }
+      }
+    }
+  }
+}

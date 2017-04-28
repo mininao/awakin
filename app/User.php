@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Ferus\FairPayApi\FairPay;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'provider', 'provider_id','fairpay_id'
     ];
 
     /**
@@ -30,5 +31,15 @@ class User extends Authenticatable
     public function orders()
     {
       return $this->hasMany('App\Order');
+    }
+
+    public function balance()
+    {
+        $fairpay = new FairPay();
+        $balance = $fairpay->api('/student/balance', 'get', array(
+            'api_key' => env('FAIRPAY_KEY'),
+            'client_id' => $this->fairpay_id
+        ))->balance;
+        return $balance;
     }
 }

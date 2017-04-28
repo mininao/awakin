@@ -1,0 +1,39 @@
+section.order-list {
+  .order-list__item {
+    font-size: 1.6em;
+
+    .item {
+      &__number {
+        font-size: 1em;
+        color: lighten($color-brand, 3%);
+      }
+
+      &__status {
+        font-style: italic;
+        color: $color-lightPink;
+        font-size: 0.8em;
+      }
+
+      &__products {
+        font-size: 0.6em;
+      }
+    }
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        .plus {
+          margin-left: 2.5rem;
+          font-size: 1.1rem;
+        }
+        &:nth-child(1) {
+          .plus {
+            display: none
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,16 @@
-// TODO : Remove unused weights
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
-
 // Variables
 @import "variables";
-
 @import "bootstrap";
+@import "node_modules/ionicons/dist/scss/ionicons";
 
 // Helpers
-
+@import "util/card";
 
 // Components
 @import "components/brand";
+@import "components/sideNav";
+@import "components/titleBar";
+@import "components/button";
 
 // Layouts
 @import "layouts/nav";
@@ -20,6 +19,21 @@
 @import "pages/welcome";
 @import "pages/auth";
 
+@import "pages/student/student";
+@import "pages/student/createOrder";
+@import "pages/student/show";
+@import "pages/student/index";
+
+@import "pages/admin/orderList";
+
 body {
   margin: 0;
+}
+
+section.container {
+  margin-top: 40px;
+}
+
+h1 {
+  font-weight: bold;
 }
