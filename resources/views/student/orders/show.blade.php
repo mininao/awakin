@@ -25,7 +25,7 @@
             <div class="order-total text-center">
                 total = {{ $order->price()/100 }} euros
             </div>
-            <get-status orderid="{{$order->order_id}}"></get-status>
+            <get-status orderid="{{$order->id}}"></get-status>
         </div>
     </div>
 </section>
