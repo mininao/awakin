@@ -9,7 +9,9 @@
             <hr>
             @foreach ($orders as $order)
                 <div class="order-list__item">
-                    <h2 class="item__number">Commande #{{ $order->order_id }}</h2>
+                    <a href="/student/orders/{{$order->id}}">
+                        <h2 class="item__number">Commande #{{ $order->order_id }}</h2>
+                    </a>
                     <h3 class="item__status">Status : {{ $order->status }}</h3>
                     <h3 class="item__products">Produits :</h3>
                     <ul>
