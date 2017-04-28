@@ -33,8 +33,8 @@ Route::get('/student/orders/products', 'student\OrderController@listProducts');
 Route::get('/student/orders/{order}', 'student\OrderController@show');
 Route::post('/student/orders', 'student\OrderController@store');
 
-Route::get('/administrateur/commands', 'administrateur\CommandsController@index');
-
+Route::get('/admin/order', 'administrateur\CommandsController@index');
+Route::post('/admin/updateorder', 'administrateur\CommandsController@updateOrder');
 // Admin CRUD Interface Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
 {

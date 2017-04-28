@@ -22,7 +22,7 @@
           <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li> -->
           <li><a href="{{ url('admin/product') }}"><i class="ion-ios-pricetags-outline sideicon"></i> <span>Gérer les produits</span></a></li>
 
-          <li><a href="/elior/orders"><i class="ion-ios-clock-outline sideicon"></i> <span>Gestion des commandes</span></a></li>
+          <li><a href="/admin/order"><i class="ion-ios-clock-outline sideicon"></i> <span>Gestion des commandes</span></a></li>
           <!-- ======================================= -->
           <li class="header">{{ trans('backpack::base.user') }}</li>
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i class="ion-ios-close-outline sideicon"></i> <span>{{ trans('backpack::base.logout') }}</span></a></li>
