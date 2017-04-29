@@ -20,3 +20,17 @@ Pour générer les données de test, lancez `php artisan migrate:refresh --seed`
 Vous pourrez ensuite vous connecter avec les identifiants :
 * User `max@max.max`
 * Password `maxmax`
+
+## Déploiement Google Cloud
+
+### Déploiement App Engine
+
+TODO
+
+### Déploiement Cloud SQL
+
+* Créer une instance cloud sql
+* Installer cloud sql proxy en local https://cloud.google.com/sql/docs/mysql/connect-external-app
+* `cloud_sql_proxy -instances=awakin-162908:europe-west1:awakin1=tcp:3306`
+* `mysql -h 127.0.0.1 -u root -p -e "CREATE DATABASE laravel;"`
+
