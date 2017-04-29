@@ -27,10 +27,10 @@ Vous pourrez ensuite vous connecter avec les identifiants :
 
 TODO
 
-### Déploiement Cloud SQL
+### Déploiement Cloud SQL 📡
 
 * Créer une instance cloud sql
 * Installer cloud sql proxy en local https://cloud.google.com/sql/docs/mysql/connect-external-app
 * `cloud_sql_proxy -instances=awakin-162908:europe-west1:awakin1=tcp:3306`
 * `mysql -h 127.0.0.1 -u root -p -e "CREATE DATABASE laravel;"`
-
+* `DB_CONNECTION=mysql DB_DATABASE=laravel DB_USERNAME=root DB_PASSWORD=lereveildesetudiants php artisan migrate --force`
