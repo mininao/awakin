@@ -12,5 +12,6 @@ env_variables:
   # production-specific configuration. However, feel free to set these
   # values in ".env" instead if you prefer.
   APP_LOG: errorlog
+  APP_ENV: production
   STORAGE_DIR: /tmp
   GOOGLE_REDIRECT: https://awakin-162908.appspot.com/callback
