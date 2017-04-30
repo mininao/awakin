@@ -8,7 +8,7 @@ let db = Firebase.initializeApp({
     storageBucket: "awakin-162908.appspot.com",
     messagingSenderId: "463458707052"
 }).database();
-var orderRef = db;
+
 export default {
-    orderRef:orderRef
+    db
 }

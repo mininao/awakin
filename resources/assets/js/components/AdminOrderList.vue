@@ -37,22 +37,17 @@ import VueFire from 'vuefire';
 Vue.use(VueFire);
 
 import firebaseModule from '../firebaseModule';
-let orderRef = firebaseModule.orderRef.ref('orders');
+let ordersRef = firebaseModule.db.ref('orders');
 export default {
   firebase: {
-      orders: orderRef.orderByChild('created_at')
+      orders: ordersRef.orderByChild('created_at');
   },
   methods: {
       updateStatus: function(order, newStatus){
-        //   orderRef.child(order['.key']).child('status').set(newStatus);
         axios.post('/admin/updateorder', {
           order:order.id,
           status:newStatus
-        })
-      },
-      //Firebase ne renvoie pas les commandes par ordre croissante de date
-      reverse: function(orders){
-          return orders.slice().reverse();
+        });
       }
   },
   filters: {

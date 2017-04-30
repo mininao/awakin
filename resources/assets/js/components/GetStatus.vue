@@ -1,7 +1,6 @@
 <template>
 
     <div class="row justify-content-around text-center order-status">
-        <!-- {{order.status}} -->
         <div class="status-icon">
             <i class="ion-ios-checkmark-circle-outline"></i> <p>Reçue</p>
         </div>
@@ -22,16 +21,12 @@ import VueFire from 'vuefire';
 Vue.use(VueFire);
 
 import firebaseModule from '../firebaseModule';
-let orderRef = firebaseModule.orderRef.ref('orders');
+let ordersRef = firebaseModule.db.ref('orders');
 
 export default {
     created() {
-        // id à changer, mettre this.orderid
-        this.$bindAsObject('order', orderRef.child(this.orderid));
-    },
-    firebase: {
-        orders: orderRef
-    },
+        this.$bindAsObject('order', ordersRef.child(this.orderid));
+    }
     props: ['orderid']
 }
 </script>
