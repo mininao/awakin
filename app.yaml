@@ -15,3 +15,19 @@ env_variables:
   APP_ENV: production
   STORAGE_DIR: /tmp
   GOOGLE_REDIRECT: https://awakin-162908.appspot.com/callback
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  # CloudSQL configuration
+  DB_CONNECTION:  mysql
+  DB_HOST: localhost
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_SOCKET: /cloudsql/awakin-162908:europe-west1:awakin1
+  
+beta_settings:
+    # for Cloud SQL, set this value to the Cloud SQL connection name,
+    # e.g. "project:region:cloudsql-instance"
+    cloud_sql_instances: "awakin-162908:europe-west1:awakin1"
+    
+manual_scaling:
+  instances: 1
