@@ -14,7 +14,7 @@ env_variables:
   APP_LOG: errorlog
   APP_ENV: production
   STORAGE_DIR: /tmp
-  GOOGLE_REDIRECT: https://awakin-162908.appspot.com/callback
+  GOOGLE_REDIRECT: http://awakin.aici.me/callback
   CACHE_DRIVER: database
   SESSION_DRIVER: database
   # CloudSQL configuration
