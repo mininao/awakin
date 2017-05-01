@@ -8,7 +8,7 @@
                 <img src="/img/awakin.svg" alt="" width="60%">
             </h1>
             <div class="row justify-content-md-center presentation-lg hidden-md-down">
-                <div class="col-lg-10 col-xl-6">
+                <div class="col-lg-10 col-xl-8">
                     <img src="/img/presentation.svg" alt="">
                 </div>
             </div>

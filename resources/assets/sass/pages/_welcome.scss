@@ -35,6 +35,11 @@
 
     .presentation-lg {
       padding: 2em 0;
+      text-align: center;
+
+      img {
+        max-height: 400px;
+      }
     }
 
     .presentation-sm {
