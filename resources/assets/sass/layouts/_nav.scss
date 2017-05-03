@@ -14,7 +14,7 @@
   }
 
   .topNav-links {
-    @include make-col(9);
+    // @include make-col(9);
     @include make-row();
     justify-content: flex-end;
   }
