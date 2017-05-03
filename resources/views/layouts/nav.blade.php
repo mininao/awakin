@@ -7,12 +7,12 @@
     </div>
     <div class="topNav-links">
       @if (Auth::guest())
-        <div class="topNav-link">
+        <!-- <div class="topNav-link">
           <a href="#">Features</a>
         </div>
         <div class="topNav-link">
           <a href="#">Comment ça marche ?</a>
-        </div>
+        </div> -->
         <div class="topNav-link topNav-link--cta">
           <a href="redirect">Connexion</a>
         </div>
